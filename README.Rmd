@@ -1,0 +1,95 @@
+---
+output: rmarkdown::github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# SpaceX - An R API wrapper for the SpaceX project
+
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(collapse = TRUE,
+                      comment = "##",
+                      fig.retina = 2,
+                      fig.align = "center",
+                      fig.path = "README_figs/README-")
+```
+
+## Installation
+
+Until now the package is not on CRAN but you can download it via GitHub with the following command:
+
+```{r, eval = FALSE}
+if (!require("devtools"))
+  install.packages("devtools")
+devtools::install_github("JohannesFriedrich/SpaceX")
+```
+
+
+## Introduction
+
+The **R**-package *SpaceX* is an API wrapper for data collected by https://api.spacexdata.com/v2/. You can request available data with different functions:
+
+Function name       | Description                                        | Example
+--------------------|----------------------------------------------------| -------
+get_SpaceX_info()       | request common information about SpaceX  | get_SpaceX_info()
+get_SpaceX_launches()   | request launches                         | get_SpaceX_launches()
+get_SpaceX_launchpads() | request launchpad data                   | get_SpaceX_launchpads()
+get_SpaceX_capsules()   | request data about capsules              | get_SpaceX_capsules() 
+get_SpaceX_rockets()    | request data about different rockets     | get_SpaceX_rockets()  
+get_SpaceX_parts()      | request data about parts of capsules or cores  | get_SpaceX_parts(type = "caps")  
+
+## Request basic information from SpaceX API <a id="basic_information"></a>
+
+First we load some needed packages. The function `get_SpaceX_info()` will deliver some information about the company.
+
+```{r, warning=FALSE, message=FALSE}
+library(SpaceX)
+library(ggplot2)
+library(dplyr)
+
+info <- get_SpaceX_info()
+```
+
+
+```{r, eval = FALSE}
+info
+```
+
+```{r echo=FALSE}
+knitr::kable(
+  info[,1:7],
+  format = "html"
+)
+```
+
+## Play around with data
+
+```{r past_launches}
+get_SpaceX_launches() %>% 
+ggplot() + 
+  geom_bar(aes(launch_year, fill = launch_site$site_name)) +
+  facet_grid(rocket$rocket_name~launch_success, scales = "free_x") +
+  theme(legend.position = "bottom") + 
+  scale_fill_discrete(name = "Launch Site") +
+  labs(x = "Year", y = "Counts")
+
+```
+
+Now we request some data about the used rockets. This can be done with the function `get_SpaceX_rockets()`.
+
+```{r}
+rockets <- get_SpaceX_rockets()
+```
+
+```{r, echo = FALSE}
+knitr::kable(rockets[,1:9])
+```
+
+
+## Related projects
+* [SpaceX](http://www.spacex.com/)
+* [SpaceX-API](https://github.com/r-spacex/SpaceX-API)
+
