@@ -16,23 +16,6 @@ create_SpaceX_request <- function(
   query = NULL
   ){
 
-  ##=======================================##
-  ## ERROR HANDLING
-  ##=======================================##
-
-  # if (missing(EcoCounterId))
-  #   stop("[create_request()] Argument 'EcoCounterId' is missing", call. = FALSE)
-  #
-  # if (!(class(EcoCounterId) %in% c("character", "integer", "numeric")))
-  #   stop("[create_request()] Argument 'EcoCounterId' has to be of class numeric or character", call. = FALSE)
-  #
-  # if (!is.null(query) && class(query) != "list")
-  #   stop("[create_request()] Argument 'query' has to be a list", call. = FALSE)
-
-  ##=======================================##
-  ## END ERROR HANDLING
-  ##=======================================##
-
   host <- "https://api.spacexdata.com"
 
   url <- httr::modify_url(host, path = c("v2", path))
