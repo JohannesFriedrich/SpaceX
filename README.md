@@ -170,19 +170,313 @@ ggplot() +
 <img src="README_figs/README-past_launches-1.png" width="672" style="display: block; margin: auto;" />
 
 Now we request some data about the used rockets. This can be done with
-the function
-`get_SpaceX_rockets()`.
+the function `get_SpaceX_rockets()`.
 
 ``` r
 rockets <- get_SpaceX_rockets()
 ```
 
-| rocketid i | d n         | ame t             | ype a  | ctive | stages | boosters | cost\_per\_launch | success\_rate\_pct |
-| ---------- | ----------- | ----------------- | ------ | :---- | :----- | :------- | :---------------- | :----------------- |
-| 1          | falcon1     | Falcon 1          | rocket | FALSE | 2      | 0        | 6.7e+06           | 40                 |
-| 2          | falcon9     | Falcon 9          | rocket | TRUE  | 2      | 0        | 5.0e+07           | 97                 |
-| 3          | falconheavy | Falcon Heavy      | rocket | TRUE  | 2      | 2        | 9.0e+07           | 100                |
-| 4          | bfr         | Big Falcon Rocket | rocket | FALSE | 2      | 0        | 7.0e+06           | 0                  |
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+rocketid
+
+</th>
+
+<th style="text-align:left;">
+
+id
+
+</th>
+
+<th style="text-align:left;">
+
+name
+
+</th>
+
+<th style="text-align:left;">
+
+type
+
+</th>
+
+<th style="text-align:left;">
+
+active
+
+</th>
+
+<th style="text-align:right;">
+
+stages
+
+</th>
+
+<th style="text-align:right;">
+
+boosters
+
+</th>
+
+<th style="text-align:right;">
+
+cost\_per\_launch
+
+</th>
+
+<th style="text-align:right;">
+
+success\_rate\_pct
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+<td style="text-align:left;">
+
+falcon1
+
+</td>
+
+<td style="text-align:left;">
+
+Falcon 1
+
+</td>
+
+<td style="text-align:left;">
+
+rocket
+
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:right;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+6.7e+06
+
+</td>
+
+<td style="text-align:right;">
+
+40
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:left;">
+
+falcon9
+
+</td>
+
+<td style="text-align:left;">
+
+Falcon 9
+
+</td>
+
+<td style="text-align:left;">
+
+rocket
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:right;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+5.0e+07
+
+</td>
+
+<td style="text-align:right;">
+
+97
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+<td style="text-align:left;">
+
+falconheavy
+
+</td>
+
+<td style="text-align:left;">
+
+Falcon Heavy
+
+</td>
+
+<td style="text-align:left;">
+
+rocket
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:right;">
+
+9.0e+07
+
+</td>
+
+<td style="text-align:right;">
+
+100
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+<td style="text-align:left;">
+
+bfr
+
+</td>
+
+<td style="text-align:left;">
+
+Big Falcon Rocket
+
+</td>
+
+<td style="text-align:left;">
+
+rocket
+
+</td>
+
+<td style="text-align:left;">
+
+FALSE
+
+</td>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:right;">
+
+0
+
+</td>
+
+<td style="text-align:right;">
+
+7.0e+06
+
+</td>
+
+<td style="text-align:right;">
+
+0
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ## Related projects
 

@@ -65,19 +65,6 @@ knitr::kable(
 )
 ```
 
-Get the latest launch:
-
-```{r}
-latest <- get_SpaceX_launches(type = "latest")
-```
-
-```{r echo=FALSE}
-knitr::kable(
-  latest,
-  format = "html"
-)
-```
-
 
 ## Play around with data
 
@@ -99,7 +86,8 @@ rockets <- get_SpaceX_rockets()
 ```
 
 ```{r, echo = FALSE}
-knitr::kable(rockets[,1:9])
+knitr::kable(rockets[,1:9],
+             format = "html")
 ```
 
 
