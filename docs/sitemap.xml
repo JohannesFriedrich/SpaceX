@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/index.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/SpaceX-package.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/create_SpaceX_request.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_capsules.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_info.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_launches.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_launchpads.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_parts.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_rockets.html</loc>
+  </url>
+</urlset>
