@@ -65,6 +65,16 @@ knitr::kable(
 )
 ```
 
+## Request upcoming starts
+
+```{r upcoming launches}
+upcoming <- get_SpaceX_launches("upcoming")
+```
+
+```{r, echo = FALSE}
+knitr::kable(upcoming[,1:9],
+             format = "html")
+```
 
 ## Play around with data
 
