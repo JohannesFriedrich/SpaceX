@@ -4,11 +4,10 @@
 \alias{get_SpaceX_rockets}
 \title{GET info about SpaceX rockets}
 \usage{
-get_SpaceX_rockets(rocket_id = NULL, ...)
+get_SpaceX_rockets(...)
 }
 \arguments{
-\item{name}{\link{character}: Name of the rocket. Choose between "falcon1", "falcon9","falconheavy" or "starship".
-By default all three rocket data are returned.}
+\item{...}{: Query string to API. See more in details.}
 }
 \value{
 \link{data.frame} with parsed data from SpaceX API.
@@ -22,6 +21,6 @@ GET info about SpaceX rockets
 get_SpaceX_rockets()
 
 ## get details about "falcon1" rocket
-get_SpaceX_rockets("falcon1")
+get_SpaceX_rockets(rocket_id = "falcon1")
 
 }

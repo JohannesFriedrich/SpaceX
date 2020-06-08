@@ -146,15 +146,18 @@
     <p>GET info about SpaceX capsules</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_SpaceX_capsules</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_SpaceX_capsules</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>name</th>
-      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Name of the capsule. Choose between "dragon1", "dragon2" or "crewdragon".
-By default all three rocket data are returned.</p></td>
+      <th>type</th>
+      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: type of the request: Choose between "upcoming" or "past".</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>: Query string to API. See more in details.</p></td>
     </tr>
     </table>
 
@@ -162,6 +165,196 @@ By default all three rocket data are returned.</p></td>
 
     <p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with parsed data from SpaceX API.</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='co'># get all capsules</span>
+<span class='fu'>get_SpaceX_capsules</span>()</div><div class='output co'>#&gt;    capsule_serial capsule_id    status          original_launch
+#&gt; 1            C101    dragon1   retired 2010-12-08T15:43:00.000Z
+#&gt; 2            C102    dragon1   retired 2012-05-22T07:44:00.000Z
+#&gt; 3            C103    dragon1   unknown 2012-10-08T00:35:00.000Z
+#&gt; 4            C104    dragon1   unknown 2013-03-01T19:10:00.000Z
+#&gt; 5            C105    dragon1   unknown 2014-04-18T19:25:00.000Z
+#&gt; 6            C106    dragon1    active 2014-09-21T05:52:00.000Z
+#&gt; 7            C107    dragon1   unknown 2015-01-10T09:47:00.000Z
+#&gt; 8            C108    dragon1    active 2015-04-14T20:10:00.000Z
+#&gt; 9            C109    dragon1 destroyed 2015-06-28T14:21:00.000Z
+#&gt; 10           C110    dragon1    active 2016-04-08T20:43:00.000Z
+#&gt; 11           C111    dragon1    active 2016-07-18T04:45:00.000Z
+#&gt; 12           C112    dragon1    active 2017-02-19T14:39:00.000Z
+#&gt; 13           C113    dragon1    active 2017-08-14T16:31:00.000Z
+#&gt; 14           C201    dragon2    active 2019-03-02T07:45:00.000Z
+#&gt; 15           C205    dragon2    active 2020-01-19T14:00:00.000Z
+#&gt; 16           C206    dragon2    active 2020-05-30T19:22:00.000Z
+#&gt; 17           C202    dragon2    active                     &lt;NA&gt;
+#&gt; 18           C203    dragon2    active                     &lt;NA&gt;
+#&gt; 19           C204    dragon2    active                     &lt;NA&gt;
+#&gt;    original_launch_unix                             missions landings
+#&gt; 1            1291822980                            COTS 1, 7        0
+#&gt; 2            1335944640                            COTS 2, 8        1
+#&gt; 3            1349656500                             CRS-1, 9        1
+#&gt; 4            1362165000                            CRS-2, 10        1
+#&gt; 5            1397849100                            CRS-3, 14        1
+#&gt; 6            1411278720    CRS-4, CRS-11, CRS-19, 18, 41, 85        3
+#&gt; 7            1420883220                            CRS-5, 19        1
+#&gt; 8            1429042200    CRS-6, CRS-13, CRS-18, 22, 51, 82        3
+#&gt; 9            1435501260                            CRS-7, 24        0
+#&gt; 10           1460148180                CRS-8, CRS-14, 28, 59        2
+#&gt; 11           1468817100                CRS-9, CRS-15, 32, 64        2
+#&gt; 12           1487515140   CRS-10, CRS-16, CRS-20, 36, 72, 91        3
+#&gt; 13           1502728260               CRS-12, CRS-17, 45, 78        2
+#&gt; 14           1551512700            CCtCap Demo Mission 1, 76        1
+#&gt; 15           1579442400 Crew Dragon In Flight Abort Test, 88        1
+#&gt; 16           1590866520            CCtCap Demo Mission 2, 94        1
+#&gt; 17                   NA                                 NULL        0
+#&gt; 18                   NA                                 NULL        0
+#&gt; 19                   NA                                 NULL        0
+#&gt;          type
+#&gt; 1  Dragon 1.0
+#&gt; 2  Dragon 1.0
+#&gt; 3  Dragon 1.0
+#&gt; 4  Dragon 1.0
+#&gt; 5  Dragon 1.1
+#&gt; 6  Dragon 1.1
+#&gt; 7  Dragon 1.1
+#&gt; 8  Dragon 1.1
+#&gt; 9  Dragon 1.1
+#&gt; 10 Dragon 1.1
+#&gt; 11 Dragon 1.1
+#&gt; 12 Dragon 1.1
+#&gt; 13 Dragon 1.1
+#&gt; 14 Dragon 2.0
+#&gt; 15 Dragon 2.0
+#&gt; 16 Dragon 2.0
+#&gt; 17 Dragon 2.0
+#&gt; 18 Dragon 2.0
+#&gt; 19 Dragon 2.0
+#&gt;                                                                                                  details
+#&gt; 1                                                                   Reentered after three weeks in orbit
+#&gt; 2                                                                                First Dragon spacecraft
+#&gt; 3                                                 First of twenty missions flown under the CRS1 contract
+#&gt; 4                                                                                                   &lt;NA&gt;
+#&gt; 5                                                                              First Dragon v1.1 capsule
+#&gt; 6                                                                      First Dragon capsule to be reused
+#&gt; 7                                                                                                   &lt;NA&gt;
+#&gt; 8                                                                     Second Dragon capsule to be reused
+#&gt; 9                                                            Destroyed on impact after F9 launch failure
+#&gt; 10                                                                                                  &lt;NA&gt;
+#&gt; 11                                                                                                  &lt;NA&gt;
+#&gt; 12                                                                                                  &lt;NA&gt;
+#&gt; 13                                                                  The last newly manufactured Dragon 1
+#&gt; 14                                                 Destroyed in a test anomaly at LZ-1 on April 20, 2019
+#&gt; 15                        In construction for use in first mission in contract under the CCtCap contract
+#&gt; 16 In Hawthorne, CA as of October 11, 2019. Seen in background during Musk/Bridenstine press conference.
+#&gt; 17                    Capsule used to qualify Dragon 2's environmental control and life support systems.
+#&gt; 18                                                 Rumored to be used for Inflight Abort Test after DM-1
+#&gt; 19                                                             Currently in construction for use in DM-2
+#&gt;    reuse_count
+#&gt; 1            0
+#&gt; 2            0
+#&gt; 3            0
+#&gt; 4            0
+#&gt; 5            0
+#&gt; 6            2
+#&gt; 7            0
+#&gt; 8            2
+#&gt; 9            0
+#&gt; 10           1
+#&gt; 11           1
+#&gt; 12           2
+#&gt; 13           1
+#&gt; 14           0
+#&gt; 15           0
+#&gt; 16           0
+#&gt; 17           0
+#&gt; 18           0
+#&gt; 19           0</div><div class='input'>
+<span class='co'># get past capsules</span>
+<span class='fu'>get_SpaceX_capsules</span>(<span class='st'>"past"</span>)</div><div class='output co'>#&gt;    capsule_serial capsule_id    status          original_launch
+#&gt; 1            C101    dragon1   retired 2010-12-08T15:43:00.000Z
+#&gt; 2            C102    dragon1   retired 2012-05-22T07:44:00.000Z
+#&gt; 3            C103    dragon1   unknown 2012-10-08T00:35:00.000Z
+#&gt; 4            C104    dragon1   unknown 2013-03-01T19:10:00.000Z
+#&gt; 5            C105    dragon1   unknown 2014-04-18T19:25:00.000Z
+#&gt; 6            C106    dragon1    active 2014-09-21T05:52:00.000Z
+#&gt; 7            C107    dragon1   unknown 2015-01-10T09:47:00.000Z
+#&gt; 8            C108    dragon1    active 2015-04-14T20:10:00.000Z
+#&gt; 9            C109    dragon1 destroyed 2015-06-28T14:21:00.000Z
+#&gt; 10           C110    dragon1    active 2016-04-08T20:43:00.000Z
+#&gt; 11           C111    dragon1    active 2016-07-18T04:45:00.000Z
+#&gt; 12           C112    dragon1    active 2017-02-19T14:39:00.000Z
+#&gt; 13           C113    dragon1    active 2017-08-14T16:31:00.000Z
+#&gt; 14           C201    dragon2    active 2019-03-02T07:45:00.000Z
+#&gt; 15           C205    dragon2    active 2020-01-19T14:00:00.000Z
+#&gt; 16           C206    dragon2    active 2020-05-30T19:22:00.000Z
+#&gt;    original_launch_unix                             missions landings
+#&gt; 1            1291822980                            COTS 1, 7        0
+#&gt; 2            1335944640                            COTS 2, 8        1
+#&gt; 3            1349656500                             CRS-1, 9        1
+#&gt; 4            1362165000                            CRS-2, 10        1
+#&gt; 5            1397849100                            CRS-3, 14        1
+#&gt; 6            1411278720    CRS-4, CRS-11, CRS-19, 18, 41, 85        3
+#&gt; 7            1420883220                            CRS-5, 19        1
+#&gt; 8            1429042200    CRS-6, CRS-13, CRS-18, 22, 51, 82        3
+#&gt; 9            1435501260                            CRS-7, 24        0
+#&gt; 10           1460148180                CRS-8, CRS-14, 28, 59        2
+#&gt; 11           1468817100                CRS-9, CRS-15, 32, 64        2
+#&gt; 12           1487515140   CRS-10, CRS-16, CRS-20, 36, 72, 91        3
+#&gt; 13           1502728260               CRS-12, CRS-17, 45, 78        2
+#&gt; 14           1551512700            CCtCap Demo Mission 1, 76        1
+#&gt; 15           1579442400 Crew Dragon In Flight Abort Test, 88        1
+#&gt; 16           1590866520            CCtCap Demo Mission 2, 94        1
+#&gt;          type
+#&gt; 1  Dragon 1.0
+#&gt; 2  Dragon 1.0
+#&gt; 3  Dragon 1.0
+#&gt; 4  Dragon 1.0
+#&gt; 5  Dragon 1.1
+#&gt; 6  Dragon 1.1
+#&gt; 7  Dragon 1.1
+#&gt; 8  Dragon 1.1
+#&gt; 9  Dragon 1.1
+#&gt; 10 Dragon 1.1
+#&gt; 11 Dragon 1.1
+#&gt; 12 Dragon 1.1
+#&gt; 13 Dragon 1.1
+#&gt; 14 Dragon 2.0
+#&gt; 15 Dragon 2.0
+#&gt; 16 Dragon 2.0
+#&gt;                                                                                                  details
+#&gt; 1                                                                   Reentered after three weeks in orbit
+#&gt; 2                                                                                First Dragon spacecraft
+#&gt; 3                                                 First of twenty missions flown under the CRS1 contract
+#&gt; 4                                                                                                   &lt;NA&gt;
+#&gt; 5                                                                              First Dragon v1.1 capsule
+#&gt; 6                                                                      First Dragon capsule to be reused
+#&gt; 7                                                                                                   &lt;NA&gt;
+#&gt; 8                                                                     Second Dragon capsule to be reused
+#&gt; 9                                                            Destroyed on impact after F9 launch failure
+#&gt; 10                                                                                                  &lt;NA&gt;
+#&gt; 11                                                                                                  &lt;NA&gt;
+#&gt; 12                                                                                                  &lt;NA&gt;
+#&gt; 13                                                                  The last newly manufactured Dragon 1
+#&gt; 14                                                 Destroyed in a test anomaly at LZ-1 on April 20, 2019
+#&gt; 15                        In construction for use in first mission in contract under the CCtCap contract
+#&gt; 16 In Hawthorne, CA as of October 11, 2019. Seen in background during Musk/Bridenstine press conference.
+#&gt;    reuse_count
+#&gt; 1            0
+#&gt; 2            0
+#&gt; 3            0
+#&gt; 4            0
+#&gt; 5            0
+#&gt; 6            2
+#&gt; 7            0
+#&gt; 8            2
+#&gt; 9            0
+#&gt; 10           1
+#&gt; 11           1
+#&gt; 12           2
+#&gt; 13           1
+#&gt; 14           0
+#&gt; 15           0
+#&gt; 16           0</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

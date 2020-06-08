@@ -9,10 +9,10 @@
 #' # get all data
 #' get_SpaceX_history()
 #'
-#' get_SpaceX_history(17)
+#' get_SpaceX_history(id = 17)
 #'
 #' # get data with flight_number 41
-#' get_SpaceX_history(flight_number = "41")
+#' get_SpaceX_history(flight_number = 41)
 #'
 #' @md
 #' @export

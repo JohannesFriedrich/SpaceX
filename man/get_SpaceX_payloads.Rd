@@ -4,10 +4,10 @@
 \alias{get_SpaceX_payloads}
 \title{GET info about SpaceX payloads}
 \usage{
-get_SpaceX_payloads(payload_id = NULL, ...)
+get_SpaceX_payloads(...)
 }
 \arguments{
-\item{payload_id}{\link{character}: Payload ID.}
+\item{...}{: Query string to API. See more in details.}
 }
 \value{
 \link{data.frame} with parsed data from SpaceX API.
@@ -16,5 +16,9 @@ get_SpaceX_payloads(payload_id = NULL, ...)
 GET info about SpaceX payloads
 }
 \examples{
+
+get_SpaceX_payloads()
+
+get_SpaceX_payloads(payload_id = "Telkom-4")
 
 }

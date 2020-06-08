@@ -17,9 +17,6 @@ get_SpaceX_launches(type = NULL, ...)
 \description{
 GET info about SpaceX launches
 }
-\details{
-
-}
 \examples{
 
 ## get details about all past launches

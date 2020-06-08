@@ -21,18 +21,25 @@ devtools::install_github("JohannesFriedrich/SpaceX")
 ## Introduction
 
 The **R**-package *SpaceX* is an API wrapper for data collected by
-<https://api.spacexdata.com/v2/>. You can request available data with
-different
+<https://api.spacexdata.com/v3/> (version v3). You can request available
+data with different
 functions:
 
-| Function name             | Description                                   | Example                           |
-| ------------------------- | --------------------------------------------- | --------------------------------- |
-| get\_SpaceX\_info()       | request common information about SpaceX       | get\_SpaceX\_info()               |
-| get\_SpaceX\_launches()   | request launches                              | get\_SpaceX\_launches()           |
-| get\_SpaceX\_launchpads() | request launchpad data                        | get\_SpaceX\_launchpads()         |
-| get\_SpaceX\_capsules()   | request data about capsules                   | get\_SpaceX\_capsules()           |
-| get\_SpaceX\_rockets()    | request data about different rockets          | get\_SpaceX\_rockets()            |
-| get\_SpaceX\_parts()      | request data about parts of capsules or cores | get\_SpaceX\_parts(type = “caps”) |
+| Function name             | Description                            | Example                                            |
+| ------------------------- | -------------------------------------- | -------------------------------------------------- |
+| get\_SpaceX\_capsules()   | request information on capsules        | get\_SpaceX\_capsules(“upcoming”)                  |
+| get\_SpaceX\_cores()      | request information on cores           | get\_SpaceX\_cores(core\_serial = “B1037”)         |
+| get\_SpaceX\_dragons()    | request information on dragon capsules | get\_SpaceX\_dragons(“dragon1”)                    |
+| get\_SpaceX\_history()    | request information on SpaceX history  | get\_SpaceX\_history()                             |
+| get\_SpaceX\_info()       | request common information on SpaceX   | get\_SpaceX\_info()                                |
+| get\_SpaceX\_landpads()   | request information on landpads        | get\_SpaceX\_landpads(id = “LZ-4”)                 |
+| get\_SpaceX\_launches()   | request information on launches        | get\_SpaceX\_launches(launch\_year = 2020)         |
+| get\_SpaceX\_launchpads() | request information on launchpads      | get\_SpaceX\_launchpads(site\_id = “ksc\_lc\_39a”) |
+| get\_SpaceX\_missions()   | request information on missions        | get\_SpaceX\_missions()                            |
+| get\_SpaceX\_payloads()   | request information on payloads        | get\_SpaceX\_payloads()                            |
+| get\_SpaceX\_rockets()    | request information on rockets         | get\_SpaceX\_rockets(“falcon1”)                    |
+| get\_SpaceX\_ships()      | request information on ships           | get\_SpaceX\_ships()                               |
+| get\_SpaceX\_roadster()   | request information on SpaceX roadster | get\_SpaceX\_roadster()                            |
 
 ## Request basic information from SpaceX API <a id="basic_information"></a>
 
@@ -45,10 +52,6 @@ library(ggplot2)
 library(dplyr)
 
 info <- get_SpaceX_info()
-```
-
-``` r
-info
 ```
 
 <table>
@@ -436,25 +439,7 @@ rockets <- get_SpaceX_rockets()
 
 <th style="text-align:right;">
 
-rocketid
-
-</th>
-
-<th style="text-align:left;">
-
 id
-
-</th>
-
-<th style="text-align:left;">
-
-name
-
-</th>
-
-<th style="text-align:left;">
-
-type
 
 </th>
 
@@ -488,6 +473,24 @@ success\_rate\_pct
 
 </th>
 
+<th style="text-align:left;">
+
+first\_flight
+
+</th>
+
+<th style="text-align:left;">
+
+country
+
+</th>
+
+<th style="text-align:left;">
+
+company
+
+</th>
+
 </tr>
 
 </thead>
@@ -499,24 +502,6 @@ success\_rate\_pct
 <td style="text-align:right;">
 
 1
-
-</td>
-
-<td style="text-align:left;">
-
-falcon1
-
-</td>
-
-<td style="text-align:left;">
-
-Falcon 1
-
-</td>
-
-<td style="text-align:left;">
-
-rocket
 
 </td>
 
@@ -550,6 +535,24 @@ FALSE
 
 </td>
 
+<td style="text-align:left;">
+
+2006-03-24
+
+</td>
+
+<td style="text-align:left;">
+
+Republic of the Marshall Islands
+
+</td>
+
+<td style="text-align:left;">
+
+SpaceX
+
+</td>
+
 </tr>
 
 <tr>
@@ -557,24 +560,6 @@ FALSE
 <td style="text-align:right;">
 
 2
-
-</td>
-
-<td style="text-align:left;">
-
-falcon9
-
-</td>
-
-<td style="text-align:left;">
-
-Falcon 9
-
-</td>
-
-<td style="text-align:left;">
-
-rocket
 
 </td>
 
@@ -608,6 +593,24 @@ TRUE
 
 </td>
 
+<td style="text-align:left;">
+
+2010-06-04
+
+</td>
+
+<td style="text-align:left;">
+
+United States
+
+</td>
+
+<td style="text-align:left;">
+
+SpaceX
+
+</td>
+
 </tr>
 
 <tr>
@@ -615,24 +618,6 @@ TRUE
 <td style="text-align:right;">
 
 3
-
-</td>
-
-<td style="text-align:left;">
-
-falconheavy
-
-</td>
-
-<td style="text-align:left;">
-
-Falcon Heavy
-
-</td>
-
-<td style="text-align:left;">
-
-rocket
 
 </td>
 
@@ -666,6 +651,24 @@ TRUE
 
 </td>
 
+<td style="text-align:left;">
+
+2018-02-06
+
+</td>
+
+<td style="text-align:left;">
+
+United States
+
+</td>
+
+<td style="text-align:left;">
+
+SpaceX
+
+</td>
+
 </tr>
 
 <tr>
@@ -673,24 +676,6 @@ TRUE
 <td style="text-align:right;">
 
 4
-
-</td>
-
-<td style="text-align:left;">
-
-starship
-
-</td>
-
-<td style="text-align:left;">
-
-Starship
-
-</td>
-
-<td style="text-align:left;">
-
-rocket
 
 </td>
 
@@ -724,6 +709,24 @@ FALSE
 
 </td>
 
+<td style="text-align:left;">
+
+2021-12-01
+
+</td>
+
+<td style="text-align:left;">
+
+United States
+
+</td>
+
+<td style="text-align:left;">
+
+SpaceX
+
+</td>
+
 </tr>
 
 </tbody>
@@ -734,29 +737,529 @@ FALSE
 
 ``` r
 stats_2020 <- get_SpaceX_launches(launch_year = 2020)
-
-payload <- stats_2020$rocket$second_stage$payloads %>% 
-  lapply(function(x){
-  x %>%   
-    select(payload_id, payload_type, payload_mass_kg)
-  
-}) %>% 
-  bind_rows()
 ```
 
 ``` r
-payload
-##                         payload_id payload_type payload_mass_kg
-## 1                       Starlink 2    Satellite           15400
-## 2 Crew Dragon In Flight Abort Test  Crew Dragon              NA
-## 3                       Starlink 3    Satellite           15600
-## 4                       Starlink 4    Satellite           15400
-## 5                           CRS-20   Dragon 1.1            1977
-## 6                       Starlink 5    Satellite           15600
-## 7                       Starlink 6    Satellite           15400
-## 8            CCtCap Demo Mission 2  Crew Dragon            9525
-## 9                       Starlink 7    Satellite           15400
+launchpads <- get_SpaceX_launchpads()
+  
+library(leaflet)
+library(htmltools)
+
+leaflet(launchpads) %>%
+  addProviderTiles(providers$OpenStreetMap) %>% 
+  addTiles() %>%  
+  addMarkers(~location$long, ~location$lat, popup = ~htmltools::htmlEscape(location$name))
 ```
+
+<img src="README_figs/README-unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+
+## Missions
+
+``` r
+missions <- get_SpaceX_missions()
+```
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+mission\_name
+
+</th>
+
+<th style="text-align:left;">
+
+mission\_id
+
+</th>
+
+<th style="text-align:left;">
+
+manufacturers
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+Thaicom
+
+</td>
+
+<td style="text-align:left;">
+
+9D1B7E0
+
+</td>
+
+<td style="text-align:left;">
+
+Orbital ATK
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Telstar
+
+</td>
+
+<td style="text-align:left;">
+
+F4F83DE
+
+</td>
+
+<td style="text-align:left;">
+
+SSL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Iridium NEXT
+
+</td>
+
+<td style="text-align:left;">
+
+F3364BF
+
+</td>
+
+<td style="text-align:left;">
+
+Orbital ATK
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Commercial Resupply Services
+
+</td>
+
+<td style="text-align:left;">
+
+EE86F74
+
+</td>
+
+<td style="text-align:left;">
+
+SpaceX
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+SES
+
+</td>
+
+<td style="text-align:left;">
+
+6C42550
+
+</td>
+
+<td style="text-align:left;">
+
+c(“Orbital ATK”, “Boeing”, “Airbus Defence and Space”)
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+JCSAT
+
+</td>
+
+<td style="text-align:left;">
+
+FE3533D
+
+</td>
+
+<td style="text-align:left;">
+
+SSL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+AsiaSat
+
+</td>
+
+<td style="text-align:left;">
+
+593B499
+
+</td>
+
+<td style="text-align:left;">
+
+SSL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Orbcomm OG2
+
+</td>
+
+<td style="text-align:left;">
+
+CE91D46
+
+</td>
+
+<td style="text-align:left;">
+
+Sierra Nevada Corporation
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+ABS
+
+</td>
+
+<td style="text-align:left;">
+
+2CF444A
+
+</td>
+
+<td style="text-align:left;">
+
+Boeing
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+Eutelsat
+
+</td>
+
+<td style="text-align:left;">
+
+F7709F2
+
+</td>
+
+<td style="text-align:left;">
+
+Boeing
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+## SpaceX support ships
+
+``` r
+ship <- get_SpaceX_ships(active = "true")
+```
+
+<table>
+
+<thead>
+
+<tr>
+
+<th style="text-align:left;">
+
+ship\_id
+
+</th>
+
+<th style="text-align:left;">
+
+ship\_name
+
+</th>
+
+<th style="text-align:left;">
+
+ship\_model
+
+</th>
+
+<th style="text-align:left;">
+
+ship\_type
+
+</th>
+
+<th style="text-align:left;">
+
+roles
+
+</th>
+
+<th style="text-align:left;">
+
+active
+
+</th>
+
+<th style="text-align:right;">
+
+imo
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:left;">
+
+GOMSCHIEF
+
+</td>
+
+<td style="text-align:left;">
+
+GO Ms Chief
+
+</td>
+
+<td style="text-align:left;">
+
+NA
+
+</td>
+
+<td style="text-align:left;">
+
+High Speed Craft
+
+</td>
+
+<td style="text-align:left;">
+
+Fairing Recovery
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:right;">
+
+9744453
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GOMSTREE
+
+</td>
+
+<td style="text-align:left;">
+
+GO Ms Tree
+
+</td>
+
+<td style="text-align:left;">
+
+NA
+
+</td>
+
+<td style="text-align:left;">
+
+High Speed Craft
+
+</td>
+
+<td style="text-align:left;">
+
+Fairing Recovery
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:right;">
+
+9744465
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GONAVIGATOR
+
+</td>
+
+<td style="text-align:left;">
+
+GO Navigator
+
+</td>
+
+<td style="text-align:left;">
+
+NA
+
+</td>
+
+<td style="text-align:left;">
+
+Cargo
+
+</td>
+
+<td style="text-align:left;">
+
+c(“Support Ship”, “Fairing Recovery”)
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:right;">
+
+9566887
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:left;">
+
+GOQUEST
+
+</td>
+
+<td style="text-align:left;">
+
+GO Quest
+
+</td>
+
+<td style="text-align:left;">
+
+NA
+
+</td>
+
+<td style="text-align:left;">
+
+Cargo
+
+</td>
+
+<td style="text-align:left;">
+
+Support Ship
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:right;">
+
+1155515
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ## Related projects
 

@@ -4,8 +4,6 @@
 #'
 #' @param ... : Query string to API. See more in details.
 #'
-#' @details
-#'
 #' @examples
 #'
 #' ## get details about all past launches

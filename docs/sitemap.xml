@@ -13,7 +13,19 @@
     <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_capsules.html</loc>
   </url>
   <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_cores.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_dragons.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_history.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_info.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_landpads.html</loc>
   </url>
   <url>
     <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_launches.html</loc>
@@ -22,9 +34,18 @@
     <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_launchpads.html</loc>
   </url>
   <url>
-    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_parts.html</loc>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_missions.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_payloads.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_roadster.html</loc>
   </url>
   <url>
     <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_rockets.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_SpaceX_ships.html</loc>
   </url>
 </urlset>

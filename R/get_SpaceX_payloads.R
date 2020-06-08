@@ -1,22 +1,25 @@
 #' GET info about SpaceX payloads
 #'
-#' @param payload_id [character]: Payload ID.
+#' @param ... : Query string to API. See more in details.
 #'
 #' @return [data.frame] with parsed data from SpaceX API.
 #'
 #' @examples
 #'
+#' get_SpaceX_payloads()
+#'
+#' get_SpaceX_payloads(payload_id = "Telkom-4")
+#'
 #' @md
 #' @export
 get_SpaceX_payloads <- function(
-  payload_id = NULL,
   ...) {
 
   query <- list(...)
 
   if (length(query) == 0) query <- NULL
 
-  data <- create_SpaceX_request(path = c("payloads", payload_id), query = query)
+  data <- create_SpaceX_request(path = c("payloads"), query = query)
 
   return(data)
 

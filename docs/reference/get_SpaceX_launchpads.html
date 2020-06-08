@@ -146,15 +146,14 @@
     <p>GET info about SpaceX launchpads</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_SpaceX_launchpads</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_SpaceX_launchpads</span>(<span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>name</th>
-      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Name of lauchnpads. Choose "ksc_lc_39a" or NULL.
-By default all three rocket data are returned.</p></td>
+      <th>...</th>
+      <td><p>: Query string to API. See more in details.</p></td>
     </tr>
     </table>
 
@@ -165,41 +164,27 @@ By default all three rocket data are returned.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## get details about all launchpads</span>
-<span class='fu'>get_SpaceX_launchpads</span>()</div><div class='output co'>#&gt;   padid              id            name
-#&gt; 1     5     vafb_slc_3w     VAFB SLC 3W
-#&gt; 2     2    ccafs_slc_40    CCAFS SLC 40
-#&gt; 3     8            stls            STLS
-#&gt; 4     1 kwajalein_atoll Kwajalein Atoll
-#&gt; 5     6     vafb_slc_4e     VAFB SLC 4E
-#&gt; 6     4      ksc_lc_39a      KSC LC 39A
-#&gt;                                                  full_name             status
-#&gt; 1        Vandenberg Air Force Base Space Launch Complex 3W            retired
-#&gt; 2 Cape Canaveral Air Force Station Space Launch Complex 40             active
-#&gt; 3                           SpaceX South Texas Launch Site under construction
-#&gt; 4                            Kwajalein Atoll Omelek Island            retired
-#&gt; 5        Vandenberg Air Force Base Space Launch Complex 4E             active
-#&gt; 6         Kennedy Space Center Historic Launch Complex 39A             active
-#&gt;               location.name  location.region location.latitude
-#&gt; 1 Vandenberg Air Force Base       California         34.644090
-#&gt; 2            Cape Canaveral          Florida         28.561857
-#&gt; 3        Boca Chica Village            Texas         25.997264
-#&gt; 4             Omelek Island Marshall Islands          9.047721
-#&gt; 5 Vandenberg Air Force Base       California         34.632093
-#&gt; 6            Cape Canaveral          Florida         28.608058
-#&gt;   location.longitude      vehicles_launched attempted_launches
-#&gt; 1         -120.59314               Falcon 1                  0
-#&gt; 2          -80.57737               Falcon 9                 52
-#&gt; 3          -97.15608               Falcon 9                  0
-#&gt; 4          167.74313               Falcon 1                  5
-#&gt; 5         -120.61083               Falcon 9                 15
-#&gt; 6          -80.60396 Falcon 9, Falcon Heavy                 21
-#&gt;   successful_launches
-#&gt; 1                   0
-#&gt; 2                  50
-#&gt; 3                   0
-#&gt; 4                   2
-#&gt; 5                  15
-#&gt; 6                  21
+<span class='fu'>get_SpaceX_launchpads</span>()</div><div class='output co'>#&gt;   id            name             status             location.name
+#&gt; 1  5     VAFB SLC 3W            retired Vandenberg Air Force Base
+#&gt; 2  2    CCAFS SLC 40             active            Cape Canaveral
+#&gt; 3  8            STLS under construction        Boca Chica Village
+#&gt; 4  1 Kwajalein Atoll            retired             Omelek Island
+#&gt; 5  6     VAFB SLC 4E             active Vandenberg Air Force Base
+#&gt; 6  4      KSC LC 39A             active            Cape Canaveral
+#&gt;    location.region location.latitude location.longitude      vehicles_launched
+#&gt; 1       California         34.644090         -120.59314               Falcon 1
+#&gt; 2          Florida         28.561857          -80.57737               Falcon 9
+#&gt; 3            Texas         25.997264          -97.15608               Falcon 9
+#&gt; 4 Marshall Islands          9.047721          167.74313               Falcon 1
+#&gt; 5       California         34.632093         -120.61083               Falcon 9
+#&gt; 6          Florida         28.608058          -80.60396 Falcon 9, Falcon Heavy
+#&gt;   attempted_launches successful_launches
+#&gt; 1                  0                   0
+#&gt; 2                 52                  50
+#&gt; 3                  0                   0
+#&gt; 4                  5                   2
+#&gt; 5                 15                  15
+#&gt; 6                 21                  21
 #&gt;                                                                                 wikipedia
 #&gt; 1                     https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_3
 #&gt; 2  https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40
@@ -213,52 +198,57 @@ By default all three rocket data are returned.</p></td>
 #&gt; 3                                                                                                                                                                                                                               SpaceX new launch site currently under construction to help keep up with the Falcon 9 and Heavy manifests. Expected to be completed in late 2018. Initially will be limited to 12 flights per year, and only GTO launches.
 #&gt; 4                                                                                                                                                                                                                                                                                                      SpaceX original launch site, where all of the Falcon 1 launches occured. Abandoned as SpaceX decided against upgrading the pad to support Falcon 9.
 #&gt; 5                                                                                                                                                                                                                                                                                     SpaceX primary west coast launch pad for polar orbits and sun synchronous orbits, primarily used for Iridium. Also intended to be capable of launching Falcon Heavy.
-#&gt; 6 NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System.</div><div class='input'>
+#&gt; 6 NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System.
+#&gt;           site_id                                           site_name_long
+#&gt; 1     vafb_slc_3w        Vandenberg Air Force Base Space Launch Complex 3W
+#&gt; 2    ccafs_slc_40 Cape Canaveral Air Force Station Space Launch Complex 40
+#&gt; 3            stls                           SpaceX South Texas Launch Site
+#&gt; 4 kwajalein_atoll                            Kwajalein Atoll Omelek Island
+#&gt; 5     vafb_slc_4e        Vandenberg Air Force Base Space Launch Complex 4E
+#&gt; 6      ksc_lc_39a         Kennedy Space Center Historic Launch Complex 39A</div><div class='input'>
 <span class='co'>## get details about launchpad "ksc_lc_39a"</span>
-<span class='fu'>get_SpaceX_launchpads</span>(<span class='st'>"ksc_lc_39a"</span>)</div><div class='output co'>#&gt; $padid
-#&gt; [1] 4
-#&gt; 
-#&gt; $id
-#&gt; [1] "ksc_lc_39a"
-#&gt; 
-#&gt; $name
-#&gt; [1] "KSC LC 39A"
-#&gt; 
-#&gt; $full_name
-#&gt; [1] "Kennedy Space Center Historic Launch Complex 39A"
-#&gt; 
-#&gt; $status
-#&gt; [1] "active"
-#&gt; 
-#&gt; $location
-#&gt; $location$name
-#&gt; [1] "Cape Canaveral"
-#&gt; 
-#&gt; $location$region
-#&gt; [1] "Florida"
-#&gt; 
-#&gt; $location$latitude
-#&gt; [1] 28.60806
-#&gt; 
-#&gt; $location$longitude
-#&gt; [1] -80.60396
-#&gt; 
-#&gt; 
-#&gt; $vehicles_launched
-#&gt; [1] "Falcon 9"     "Falcon Heavy"
-#&gt; 
-#&gt; $attempted_launches
-#&gt; [1] 21
-#&gt; 
-#&gt; $successful_launches
-#&gt; [1] 21
-#&gt; 
-#&gt; $wikipedia
-#&gt; [1] "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Complex_39A"
-#&gt; 
-#&gt; $details
-#&gt; [1] "NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System."
-#&gt; </div><div class='input'>
+<span class='fu'>get_SpaceX_launchpads</span>(<span class='kw'>site_id</span> <span class='kw'>=</span> <span class='st'>"ksc_lc_39a"</span>)</div><div class='output co'>#&gt;   id            name             status             location.name
+#&gt; 1  5     VAFB SLC 3W            retired Vandenberg Air Force Base
+#&gt; 2  2    CCAFS SLC 40             active            Cape Canaveral
+#&gt; 3  8            STLS under construction        Boca Chica Village
+#&gt; 4  1 Kwajalein Atoll            retired             Omelek Island
+#&gt; 5  6     VAFB SLC 4E             active Vandenberg Air Force Base
+#&gt; 6  4      KSC LC 39A             active            Cape Canaveral
+#&gt;    location.region location.latitude location.longitude      vehicles_launched
+#&gt; 1       California         34.644090         -120.59314               Falcon 1
+#&gt; 2          Florida         28.561857          -80.57737               Falcon 9
+#&gt; 3            Texas         25.997264          -97.15608               Falcon 9
+#&gt; 4 Marshall Islands          9.047721          167.74313               Falcon 1
+#&gt; 5       California         34.632093         -120.61083               Falcon 9
+#&gt; 6          Florida         28.608058          -80.60396 Falcon 9, Falcon Heavy
+#&gt;   attempted_launches successful_launches
+#&gt; 1                  0                   0
+#&gt; 2                 52                  50
+#&gt; 3                  0                   0
+#&gt; 4                  5                   2
+#&gt; 5                 15                  15
+#&gt; 6                 21                  21
+#&gt;                                                                                 wikipedia
+#&gt; 1                     https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_3
+#&gt; 2  https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40
+#&gt; 3                            https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site
+#&gt; 4                                             https://en.wikipedia.org/wiki/Omelek_Island
+#&gt; 5                     https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_4
+#&gt; 6 https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Complex_39A
+#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                    details
+#&gt; 1                                                                                                                                                                                                                                                                                                   SpaceX original west coast launch pad for Falcon 1. Performed a static fire but was never used for a launch and abandoned due to scheduling conflicts.
+#&gt; 2                                                                                                                                                                                                                                             SpaceX primary Falcon 9 launch pad, where all east coast Falcon 9s launched prior to the AMOS-6 anomaly. Initially used to launch Titan rockets for Lockheed Martin. Back online since CRS-13 on 2017-12-15.
+#&gt; 3                                                                                                                                                                                                                               SpaceX new launch site currently under construction to help keep up with the Falcon 9 and Heavy manifests. Expected to be completed in late 2018. Initially will be limited to 12 flights per year, and only GTO launches.
+#&gt; 4                                                                                                                                                                                                                                                                                                      SpaceX original launch site, where all of the Falcon 1 launches occured. Abandoned as SpaceX decided against upgrading the pad to support Falcon 9.
+#&gt; 5                                                                                                                                                                                                                                                                                     SpaceX primary west coast launch pad for polar orbits and sun synchronous orbits, primarily used for Iridium. Also intended to be capable of launching Falcon Heavy.
+#&gt; 6 NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System.
+#&gt;           site_id                                           site_name_long
+#&gt; 1     vafb_slc_3w        Vandenberg Air Force Base Space Launch Complex 3W
+#&gt; 2    ccafs_slc_40 Cape Canaveral Air Force Station Space Launch Complex 40
+#&gt; 3            stls                           SpaceX South Texas Launch Site
+#&gt; 4 kwajalein_atoll                            Kwajalein Atoll Omelek Island
+#&gt; 5     vafb_slc_4e        Vandenberg Air Force Base Space Launch Complex 4E
+#&gt; 6      ksc_lc_39a         Kennedy Space Center Historic Launch Complex 39A</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

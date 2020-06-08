@@ -4,14 +4,22 @@
 \alias{get_SpaceX_ships}
 \title{GET info about SpaceX missions}
 \usage{
-get_SpaceX_ships(ship_id = NULL, ...)
+get_SpaceX_ships(...)
 }
 \arguments{
-\item{ship_id}{\link{character}: Ship ID.}
+\item{...}{: Query string to API. See more in details.}
 }
 \value{
 \link{data.frame} with parsed data from SpaceX API.
 }
 \description{
 GET info about SpaceX missions
+}
+\examples{
+
+# get all SpaceX ships
+get_SpaceX_ships()
+
+get_SpaceX_ships(ship_id = "AMERICANCHAMPION")
+
 }

@@ -106,12 +106,12 @@
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>The <strong>R</strong>-package <em>SpaceX</em> is an API wrapper for data collected by <a href="https://api.spacexdata.com/v2/" class="uri">https://api.spacexdata.com/v2/</a>. You can request available data with different functions:</p>
+<p>The <strong>R</strong>-package <em>SpaceX</em> is an API wrapper for data collected by <a href="https://api.spacexdata.com/v3/" class="uri">https://api.spacexdata.com/v3/</a> (version v3). You can request available data with different functions:</p>
 <table class="table">
 <colgroup>
-<col width="24%">
-<col width="43%">
-<col width="32%">
+<col width="22%">
+<col width="33%">
+<col width="44%">
 </colgroup>
 <thead><tr class="header">
 <th>Function name</th>
@@ -120,34 +120,69 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>get_SpaceX_info()</td>
-<td>request common information about SpaceX</td>
-<td>get_SpaceX_info()</td>
+<td>get_SpaceX_capsules()</td>
+<td>request information on capsules</td>
+<td>get_SpaceX_capsules(“upcoming”)</td>
 </tr>
 <tr class="even">
-<td>get_SpaceX_launches()</td>
-<td>request launches</td>
-<td>get_SpaceX_launches()</td>
+<td>get_SpaceX_cores()</td>
+<td>request information on cores</td>
+<td>get_SpaceX_cores(core_serial = “B1037”)</td>
 </tr>
 <tr class="odd">
-<td>get_SpaceX_launchpads()</td>
-<td>request launchpad data</td>
-<td>get_SpaceX_launchpads()</td>
+<td>get_SpaceX_dragons()</td>
+<td>request information on dragon capsules</td>
+<td>get_SpaceX_dragons(“dragon1”)</td>
 </tr>
 <tr class="even">
-<td>get_SpaceX_capsules()</td>
-<td>request data about capsules</td>
-<td>get_SpaceX_capsules()</td>
+<td>get_SpaceX_history()</td>
+<td>request information on SpaceX history</td>
+<td>get_SpaceX_history()</td>
+</tr>
+<tr class="odd">
+<td>get_SpaceX_info()</td>
+<td>request common information on SpaceX</td>
+<td>get_SpaceX_info()</td>
+</tr>
+<tr class="even">
+<td>get_SpaceX_landpads()</td>
+<td>request information on landpads</td>
+<td>get_SpaceX_landpads(id = “LZ-4”)</td>
+</tr>
+<tr class="odd">
+<td>get_SpaceX_launches()</td>
+<td>request information on launches</td>
+<td>get_SpaceX_launches(launch_year = 2020)</td>
+</tr>
+<tr class="even">
+<td>get_SpaceX_launchpads()</td>
+<td>request information on launchpads</td>
+<td>get_SpaceX_launchpads(site_id = “ksc_lc_39a”)</td>
+</tr>
+<tr class="odd">
+<td>get_SpaceX_missions()</td>
+<td>request information on missions</td>
+<td>get_SpaceX_missions()</td>
+</tr>
+<tr class="even">
+<td>get_SpaceX_payloads()</td>
+<td>request information on payloads</td>
+<td>get_SpaceX_payloads()</td>
 </tr>
 <tr class="odd">
 <td>get_SpaceX_rockets()</td>
-<td>request data about different rockets</td>
-<td>get_SpaceX_rockets()</td>
+<td>request information on rockets</td>
+<td>get_SpaceX_rockets(“falcon1”)</td>
 </tr>
 <tr class="even">
-<td>get_SpaceX_parts()</td>
-<td>request data about parts of capsules or cores</td>
-<td>get_SpaceX_parts(type = “caps”)</td>
+<td>get_SpaceX_ships()</td>
+<td>request information on ships</td>
+<td>get_SpaceX_ships()</td>
+</tr>
+<tr class="odd">
+<td>get_SpaceX_roadster()</td>
+<td>request information on SpaceX roadster</td>
+<td>get_SpaceX_roadster()</td>
 </tr>
 </tbody>
 </table>
@@ -162,7 +197,6 @@
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
 
 <span class="no">info</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_info.html">get_SpaceX_info</a></span>()</pre></div>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="no">info</span></pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:left;">
@@ -215,7 +249,7 @@
 <div id="request-upcoming-starts" class="section level2">
 <h2 class="hasAnchor">
 <a href="#request-upcoming-starts" class="anchor"></a>Request upcoming starts</h2>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">upcoming</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>(<span class="st">"upcoming"</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="no">upcoming</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>(<span class="st">"upcoming"</span>)</pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:right;">
@@ -340,7 +374,7 @@
 <div id="play-around-with-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#play-around-with-data" class="anchor"></a>Play around with data</h2>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>() <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>() <span class="kw">%&gt;%</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">launch_year</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">launch_site</span>$<span class="no">site_name</span>)) +
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="no">rocket</span>$<span class="no">rocket_name</span>~<span class="no">launch_success</span>, <span class="kw">scales</span> <span class="kw">=</span> <span class="st">"free_x"</span>) +
@@ -351,20 +385,11 @@
         <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>))</pre></div>
 <p><img src="README_figs/README-past_launches-1.png" width="672" style="display: block; margin: auto;"></p>
 <p>Now we request some data about the used rockets. This can be done with the function <code><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets()</a></code>.</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="no">rockets</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets</a></span>()</pre></div>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="no">rockets</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets</a></span>()</pre></div>
 <table class="table">
 <thead><tr>
 <th style="text-align:right;">
-<p>rocketid</p>
-</th>
-<th style="text-align:left;">
 <p>id</p>
-</th>
-<th style="text-align:left;">
-<p>name</p>
-</th>
-<th style="text-align:left;">
-<p>type</p>
 </th>
 <th style="text-align:left;">
 <p>active</p>
@@ -381,20 +406,20 @@
 <th style="text-align:right;">
 <p>success_rate_pct</p>
 </th>
+<th style="text-align:left;">
+<p>first_flight</p>
+</th>
+<th style="text-align:left;">
+<p>country</p>
+</th>
+<th style="text-align:left;">
+<p>company</p>
+</th>
 </tr></thead>
 <tbody>
 <tr>
 <td style="text-align:right;">
 <p>1</p>
-</td>
-<td style="text-align:left;">
-<p>falcon1</p>
-</td>
-<td style="text-align:left;">
-<p>Falcon 1</p>
-</td>
-<td style="text-align:left;">
-<p>rocket</p>
 </td>
 <td style="text-align:left;">
 <p>FALSE</p>
@@ -411,19 +436,19 @@
 <td style="text-align:right;">
 <p>40</p>
 </td>
+<td style="text-align:left;">
+<p>2006-03-24</p>
+</td>
+<td style="text-align:left;">
+<p>Republic of the Marshall Islands</p>
+</td>
+<td style="text-align:left;">
+<p>SpaceX</p>
+</td>
 </tr>
 <tr>
 <td style="text-align:right;">
 <p>2</p>
-</td>
-<td style="text-align:left;">
-<p>falcon9</p>
-</td>
-<td style="text-align:left;">
-<p>Falcon 9</p>
-</td>
-<td style="text-align:left;">
-<p>rocket</p>
 </td>
 <td style="text-align:left;">
 <p>TRUE</p>
@@ -440,19 +465,19 @@
 <td style="text-align:right;">
 <p>97</p>
 </td>
+<td style="text-align:left;">
+<p>2010-06-04</p>
+</td>
+<td style="text-align:left;">
+<p>United States</p>
+</td>
+<td style="text-align:left;">
+<p>SpaceX</p>
+</td>
 </tr>
 <tr>
 <td style="text-align:right;">
 <p>3</p>
-</td>
-<td style="text-align:left;">
-<p>falconheavy</p>
-</td>
-<td style="text-align:left;">
-<p>Falcon Heavy</p>
-</td>
-<td style="text-align:left;">
-<p>rocket</p>
 </td>
 <td style="text-align:left;">
 <p>TRUE</p>
@@ -469,19 +494,19 @@
 <td style="text-align:right;">
 <p>100</p>
 </td>
+<td style="text-align:left;">
+<p>2018-02-06</p>
+</td>
+<td style="text-align:left;">
+<p>United States</p>
+</td>
+<td style="text-align:left;">
+<p>SpaceX</p>
+</td>
 </tr>
 <tr>
 <td style="text-align:right;">
 <p>4</p>
-</td>
-<td style="text-align:left;">
-<p>starship</p>
-</td>
-<td style="text-align:left;">
-<p>Starship</p>
-</td>
-<td style="text-align:left;">
-<p>rocket</p>
 </td>
 <td style="text-align:left;">
 <p>FALSE</p>
@@ -498,6 +523,15 @@
 <td style="text-align:right;">
 <p>0</p>
 </td>
+<td style="text-align:left;">
+<p>2021-12-01</p>
+</td>
+<td style="text-align:left;">
+<p>United States</p>
+</td>
+<td style="text-align:left;">
+<p>SpaceX</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -505,26 +539,271 @@
 <div id="stats-2020" class="section level2">
 <h2 class="hasAnchor">
 <a href="#stats-2020" class="anchor"></a>Stats 2020</h2>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="no">stats_2020</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>(<span class="kw">launch_year</span> <span class="kw">=</span> <span class="fl">2020</span>)
+<div class="sourceCode" id="cb6"><pre class="r"><span class="no">stats_2020</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>(<span class="kw">launch_year</span> <span class="kw">=</span> <span class="fl">2020</span>)</pre></div>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="no">launchpads</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launchpads.html">get_SpaceX_launchpads</a></span>()
 
-<span class="no">payload</span> <span class="kw">&lt;-</span> <span class="no">stats_2020</span>$<span class="no">rocket</span>$<span class="no">second_stage</span>$<span class="no">payloads</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="kw">function</span>(<span class="no">x</span>){
-  <span class="no">x</span> <span class="kw">%&gt;%</span>
-    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">payload_id</span>, <span class="no">payload_type</span>, <span class="no">payload_mass_kg</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">leaflet</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">htmltools</span>)
 
-}) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>()</pre></div>
-<div class="sourceCode" id="cb8"><pre class="r"><span class="no">payload</span>
-<span class="co">##                         payload_id payload_type payload_mass_kg</span>
-<span class="co">## 1                       Starlink 2    Satellite           15400</span>
-<span class="co">## 2 Crew Dragon In Flight Abort Test  Crew Dragon              NA</span>
-<span class="co">## 3                       Starlink 3    Satellite           15600</span>
-<span class="co">## 4                       Starlink 4    Satellite           15400</span>
-<span class="co">## 5                           CRS-20   Dragon 1.1            1977</span>
-<span class="co">## 6                       Starlink 5    Satellite           15600</span>
-<span class="co">## 7                       Starlink 6    Satellite           15400</span>
-<span class="co">## 8            CCtCap Demo Mission 2  Crew Dragon            9525</span>
-<span class="co">## 9                       Starlink 7    Satellite           15400</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/leaflet.html">leaflet</a></span>(<span class="no">launchpads</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/addProviderTiles.html">addProviderTiles</a></span>(<span class="no">providers</span>$<span class="no">OpenStreetMap</span>) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-layers.html">addTiles</a></span>() <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/leaflet/man/map-layers.html">addMarkers</a></span>(~<span class="no">location</span>$<span class="no">long</span>, ~<span class="no">location</span>$<span class="no">lat</span>, <span class="kw">popup</span> <span class="kw">=</span> ~<span class="kw pkg">htmltools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/htmlEscape.html">htmlEscape</a></span>(<span class="no">location</span>$<span class="no">name</span>))</pre></div>
+<p><img src="README_figs/README-unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;"></p>
+</div>
+<div id="missions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#missions" class="anchor"></a>Missions</h2>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="no">missions</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_missions.html">get_SpaceX_missions</a></span>()</pre></div>
+<table class="table">
+<thead><tr>
+<th style="text-align:left;">
+<p>mission_name</p>
+</th>
+<th style="text-align:left;">
+<p>mission_id</p>
+</th>
+<th style="text-align:left;">
+<p>manufacturers</p>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<p>Thaicom</p>
+</td>
+<td style="text-align:left;">
+<p>9D1B7E0</p>
+</td>
+<td style="text-align:left;">
+<p>Orbital ATK</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>Telstar</p>
+</td>
+<td style="text-align:left;">
+<p>F4F83DE</p>
+</td>
+<td style="text-align:left;">
+<p>SSL</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>Iridium NEXT</p>
+</td>
+<td style="text-align:left;">
+<p>F3364BF</p>
+</td>
+<td style="text-align:left;">
+<p>Orbital ATK</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>Commercial Resupply Services</p>
+</td>
+<td style="text-align:left;">
+<p>EE86F74</p>
+</td>
+<td style="text-align:left;">
+<p>SpaceX</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>SES</p>
+</td>
+<td style="text-align:left;">
+<p>6C42550</p>
+</td>
+<td style="text-align:left;">
+<p>c(“Orbital ATK”, “Boeing”, “Airbus Defence and Space”)</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>JCSAT</p>
+</td>
+<td style="text-align:left;">
+<p>FE3533D</p>
+</td>
+<td style="text-align:left;">
+<p>SSL</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>AsiaSat</p>
+</td>
+<td style="text-align:left;">
+<p>593B499</p>
+</td>
+<td style="text-align:left;">
+<p>SSL</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>Orbcomm OG2</p>
+</td>
+<td style="text-align:left;">
+<p>CE91D46</p>
+</td>
+<td style="text-align:left;">
+<p>Sierra Nevada Corporation</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>ABS</p>
+</td>
+<td style="text-align:left;">
+<p>2CF444A</p>
+</td>
+<td style="text-align:left;">
+<p>Boeing</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>Eutelsat</p>
+</td>
+<td style="text-align:left;">
+<p>F7709F2</p>
+</td>
+<td style="text-align:left;">
+<p>Boeing</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="spacex-support-ships" class="section level2">
+<h2 class="hasAnchor">
+<a href="#spacex-support-ships" class="anchor"></a>SpaceX support ships</h2>
+<div class="sourceCode" id="cb9"><pre class="r"><span class="no">ship</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_ships.html">get_SpaceX_ships</a></span>(<span class="kw">active</span> <span class="kw">=</span> <span class="st">"true"</span>)</pre></div>
+<table class="table">
+<thead><tr>
+<th style="text-align:left;">
+<p>ship_id</p>
+</th>
+<th style="text-align:left;">
+<p>ship_name</p>
+</th>
+<th style="text-align:left;">
+<p>ship_model</p>
+</th>
+<th style="text-align:left;">
+<p>ship_type</p>
+</th>
+<th style="text-align:left;">
+<p>roles</p>
+</th>
+<th style="text-align:left;">
+<p>active</p>
+</th>
+<th style="text-align:right;">
+<p>imo</p>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<p>GOMSCHIEF</p>
+</td>
+<td style="text-align:left;">
+<p>GO Ms Chief</p>
+</td>
+<td style="text-align:left;">
+<p>NA</p>
+</td>
+<td style="text-align:left;">
+<p>High Speed Craft</p>
+</td>
+<td style="text-align:left;">
+<p>Fairing Recovery</p>
+</td>
+<td style="text-align:left;">
+<p>TRUE</p>
+</td>
+<td style="text-align:right;">
+<p>9744453</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>GOMSTREE</p>
+</td>
+<td style="text-align:left;">
+<p>GO Ms Tree</p>
+</td>
+<td style="text-align:left;">
+<p>NA</p>
+</td>
+<td style="text-align:left;">
+<p>High Speed Craft</p>
+</td>
+<td style="text-align:left;">
+<p>Fairing Recovery</p>
+</td>
+<td style="text-align:left;">
+<p>TRUE</p>
+</td>
+<td style="text-align:right;">
+<p>9744465</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>GONAVIGATOR</p>
+</td>
+<td style="text-align:left;">
+<p>GO Navigator</p>
+</td>
+<td style="text-align:left;">
+<p>NA</p>
+</td>
+<td style="text-align:left;">
+<p>Cargo</p>
+</td>
+<td style="text-align:left;">
+<p>c(“Support Ship”, “Fairing Recovery”)</p>
+</td>
+<td style="text-align:left;">
+<p>TRUE</p>
+</td>
+<td style="text-align:right;">
+<p>9566887</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<p>GOQUEST</p>
+</td>
+<td style="text-align:left;">
+<p>GO Quest</p>
+</td>
+<td style="text-align:left;">
+<p>NA</p>
+</td>
+<td style="text-align:left;">
+<p>Cargo</p>
+</td>
+<td style="text-align:left;">
+<p>Support Ship</p>
+</td>
+<td style="text-align:left;">
+<p>TRUE</p>
+</td>
+<td style="text-align:right;">
+<p>1155515</p>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="related-projects" class="section level2">
 <h2 class="hasAnchor">

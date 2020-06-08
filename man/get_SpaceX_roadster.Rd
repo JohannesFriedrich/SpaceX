@@ -5,7 +5,10 @@
 \title{GET info about gives orbital parameters about the current position of Elon's Tesla Roadster
 that was launched on the first Falcon Heavy demo flight.}
 \usage{
-get_SpaceX_roadster()
+get_SpaceX_roadster(...)
+}
+\arguments{
+\item{...}{: Query string to API. See more in details.}
 }
 \value{
 \link{data.frame} with parsed data from SpaceX API.
