@@ -1,6 +1,6 @@
 #' GET info about SpaceX rockets
 #'
-#' @param name [character]: Name of the rocket. Choose between "falcon1", "falcon9" or "falconheavy".
+#' @param name [character]: Name of the rocket. Choose between "falcon1", "falcon9","falconheavy" or "starship".
 #' By default all three rocket data are returned.
 #'
 #' @return [data.frame] with parsed data from SpaceX API.
@@ -15,9 +15,15 @@
 #'
 #' @md
 #' @export
-get_SpaceX_rockets <- function(name = NULL) {
+get_SpaceX_rockets <- function(
+  rocket_id = NULL,
+  ...) {
 
-  data <- create_SpaceX_request(path = c("rockets", name))
+  query <- list(...)
+
+  if (length(query) == 0) query <- NULL
+
+  data <- create_SpaceX_request(path = c("rockets", rocket_id), query = query)
 
   return(data)
 

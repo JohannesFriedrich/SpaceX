@@ -4,10 +4,10 @@
 \alias{get_SpaceX_rockets}
 \title{GET info about SpaceX rockets}
 \usage{
-get_SpaceX_rockets(name = NULL)
+get_SpaceX_rockets(rocket_id = NULL, ...)
 }
 \arguments{
-\item{name}{\link{character}: Name of the rocket. Choose between "falcon1", "falcon9" or "falconheavy".
+\item{name}{\link{character}: Name of the rocket. Choose between "falcon1", "falcon9","falconheavy" or "starship".
 By default all three rocket data are returned.}
 }
 \value{

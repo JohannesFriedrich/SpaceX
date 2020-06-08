@@ -8,21 +8,29 @@
 
 <title>GET detailed info about SpaceX parts — get_SpaceX_parts • EcoCounteR</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +38,10 @@
 
 
 
-<meta property="og:title" content="GET detailed info about SpaceX parts — get_SpaceX_parts" />
 
+<meta property="og:title" content="GET detailed info about SpaceX parts — get_SpaceX_parts" />
 <meta property="og:description" content="GET detailed info about SpaceX parts" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -57,9 +65,10 @@
   gtag('config', 'UA-84499524-2');
 </script>
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -93,7 +102,6 @@
   </a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../news/index.html">
@@ -123,6 +131,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -134,371 +143,474 @@
     </div>
 
     <div class="ref-description">
-    
     <p>GET detailed info about SpaceX parts</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>get_SpaceX_parts</span>(<span class='no'>type</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>type</th>
-      <td><p><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a>: Type of parts. Choose between "caps" for capsule details
+      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Type of parts. Choose between "caps" for capsule details
 or "cores" for core details.</p></td>
     </tr>
     <tr>
       <th>name</th>
-      <td><p><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a>: Name of capsule or core.</p></td>
+      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Name of capsule or core.</p></td>
     </tr>
     <tr>
       <th>...</th>
       <td><p>: Query string to API. See more in details.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a> with parsed data from SpaceX API.</p>
-    
+    <p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with parsed data from SpaceX API.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Query Strings for <code>type = "caps"</code></p><table class='table'>
-<tr><td></td><td>Query Strings</td></tr>
-<tr><td>Description</td><td></td></tr>
+<tr><td>Query Strings</td><td>Description</td></tr>
 <tr><td>capsule_serial</td><td>Filter by capsule serial #</td></tr>
-<tr><td></td><td>capsule_id</td></tr>
-<tr><td>Filter by capsule id</td><td></td></tr>
+<tr><td>capsule_id</td><td>Filter by capsule id</td></tr>
 <tr><td>status</td><td>Filter by capsule status</td></tr>
-<tr><td></td><td>original_launch</td></tr>
-<tr><td>Filter by original launch date</td><td></td></tr>
+<tr><td>original_launch</td><td>Filter by original launch date</td></tr>
 <tr><td>missions</td><td>Filter by flight missions</td></tr>
-<tr><td></td><td>landings</td></tr>
-<tr><td>Filter by # of landings</td><td></td></tr>
+<tr><td>landings</td><td>Filter by # of landings</td></tr>
 <tr><td>type</td><td>Filter by type of dragon capusle</td></tr>
-<tr><td></td><td></td></tr>
 </table>
-    <p>Query Strings for <code>type = "cores"</code></p><table class='table'>
-<tr><td></td><td>core_serial</td></tr>
-<tr><td>Filter by core serial #</td><td></td></tr>
+
+
+<p>Query Strings for <code>type = "cores"</code></p><table class='table'>
+<tr><td>core_serial</td><td>Filter by core serial #</td></tr>
 <tr><td>status</td><td>Filter by flight status</td></tr>
-<tr><td></td><td>original_launch</td></tr>
-<tr><td>Filter by original launch date</td><td></td></tr>
+<tr><td>original_launch</td><td>Filter by original launch date</td></tr>
 <tr><td>missions</td><td>Filter by flight missions</td></tr>
-<tr><td></td><td>rtls_attempt</td></tr>
-<tr><td>Filter by at least 1 rtls attempt</td><td></td></tr>
+<tr><td>rtls_attempt</td><td>Filter by at least 1 rtls attempt</td></tr>
 <tr><td>rtls_landings</td><td>Filter by total number of landings</td></tr>
-<tr><td></td><td>asds_attempt</td></tr>
-<tr><td>Filter by at least 1 asds attempt</td><td></td></tr>
+<tr><td>asds_attempt</td><td>Filter by at least 1 asds attempt</td></tr>
 <tr><td>asds_landings</td><td>Filter by total number of landings</td></tr>
-<tr><td></td><td>water_landing</td></tr>
-<tr><td>Filter by at least 1 water landing</td><td></td></tr>
+<tr><td>water_landing</td><td>Filter by at least 1 water landing</td></tr>
 </table>
-    
+
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## get details about all cores</span>
-<span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"cores"</span>)</div><div class='output co'>#&gt;    core_serial block    status          original_launch original_launch_unix
-#&gt; 1        B1052     5    active                     &lt;NA&gt;                   NA
-#&gt; 2        B1053     5    active                     &lt;NA&gt;                   NA
-#&gt; 3     Merlin1A    NA  expended 2006-03-24T22:30:00.000Z           1143239400
-#&gt; 4     Merlin2A    NA  expended 2007-03-21T01:10:00.000Z           1174439400
-#&gt; 5     Merlin1C    NA  expended 2008-08-02T03:34:00.000Z           1217648040
-#&gt; 6     Merlin2C    NA  expended 2008-09-28T23:15:00.000Z           1222643700
-#&gt; 7     Merlin3C    NA  expended 2009-07-13T03:35:00.000Z           1247456100
-#&gt; 8        B0003     1  expended 2010-06-04T18:45:00.000Z           1275677100
-#&gt; 9        B0004     1  expended 2010-12-08T15:43:00.000Z           1291822980
-#&gt; 10       B0005     1  expended 2012-05-22T07:44:00.000Z           1337672640
-#&gt; 11       B0006     1  expended 2012-10-08T00:35:00.000Z           1349656500
-#&gt; 12       B0007     1  expended 2013-03-01T19:10:00.000Z           1362165000
-#&gt; 13       B1003     1 destroyed 2013-09-29T16:00:00.000Z           1380470400
-#&gt; 14       B1004     1  expended 2013-12-03T22:41:00.000Z           1386110460
-#&gt; 15       B1005     1  expended 2014-01-06T18:06:00.000Z           1389031560
-#&gt; 16       B1006     1 destroyed 2014-04-18T19:25:00.000Z           1397849100
-#&gt; 17       B1007     1 destroyed 2014-07-14T15:15:00.000Z           1405350900
-#&gt; 18       B1008     1  expended 2014-08-05T08:00:00.000Z           1407225600
-#&gt; 19       B1011     1  expended 2014-09-07T05:00:00.000Z           1410066000
-#&gt; 20       B1010     1  expended 2014-09-21T05:52:00.000Z           1411278720
-#&gt; 21       B1012     1 destroyed 2015-01-10T09:47:00.000Z           1420883220
-#&gt; 22       B1013     1 destroyed 2015-02-11T23:03:00.000Z           1423695780
-#&gt; 23       B1014     1  expended 2015-03-02T03:50:00.000Z           1425268200
-#&gt; 24       B1015     1 destroyed 2015-04-14T20:10:00.000Z           1429042200
-#&gt; 25       B1016     1  expended 2015-04-27T23:03:00.000Z           1430175780
-#&gt; 26       B1018     1 destroyed 2015-06-28T14:21:00.000Z           1435501260
-#&gt; 27       B1019     1   retired 2015-12-22T01:29:00.000Z           1450747740
-#&gt; 28       B1017     1 destroyed 2016-01-17T15:42:00.000Z           1453045320
-#&gt; 29       B1020     1 destroyed 2016-03-04T23:35:00.000Z           1457134500
-#&gt; 30       B1021     2   retired 2016-04-08T20:43:00.000Z           1460148180
-#&gt; 31       B1022     2   retired 2016-05-06T05:21:00.000Z           1462512060
-#&gt; 32       B1023     2   retired 2016-05-27T21:39:00.000Z           1464385140
-#&gt; 33       B1024     2 destroyed 2016-06-15T14:29:00.000Z           1466000940
-#&gt; 34       B1025     2   retired 2016-07-18T04:45:00.000Z           1468817100
-#&gt; 35       B1026     2   retired 2016-08-14T05:26:00.000Z           1471152360
-#&gt; 36       B1028     3 destroyed 2016-09-01T13:07:00.000Z           1472735220
-#&gt; 37       B1029     3   retired 2017-01-14T17:54:00.000Z           1484416440
-#&gt; 38       B1031     3   retired 2017-02-19T14:39:00.000Z           1487515140
-#&gt; 39       B1030     3 destroyed 2017-03-16T06:00:00.000Z           1489644000
-#&gt; 40       B1032     3 destroyed 2017-05-01T11:15:00.000Z           1493637300
-#&gt; 41       B1034     3  expended 2017-05-15T23:21:00.000Z           1494890460
-#&gt; 42       B1035     3   retired 2017-06-03T21:07:00.000Z           1496524020
-#&gt; 43       B1036     3 destroyed 2017-06-25T13:25:00.000Z           1498397100
-#&gt; 44       B1037     3  expended 2017-07-05T23:35:00.000Z           1499297700
-#&gt; 45       B1039     4  expended 2017-08-14T16:31:00.000Z           1502728260
-#&gt; 46       B1038     3  expended 2017-08-24T18:50:00.000Z           1503600600
-#&gt; 47       B1040     4  expended 2017-09-07T13:50:00.000Z           1504792200
-#&gt; 48       B1041     4  expended 2017-10-09T12:37:00.000Z           1507552620
-#&gt; 49       B1042     4   retired 2017-10-30T19:34:00.000Z           1509392040
-#&gt; 50       B1043     4  expended 2017-11-11T23:00:00.000Z           1510441200
-#&gt; 51       B1033     3 destroyed 2018-02-06T20:45:00.000Z           1517949900
-#&gt; 52       B1044     4  expended 2018-03-06T05:33:00.000Z           1520314380
-#&gt; 53       B1045     4  expended 2018-04-18T22:51:00.000Z           1524091860
-#&gt; 54       B1046     5    active 2018-05-11T20:14:00.000Z           1526069640
-#&gt; 55       B1047     5    active 2018-07-22T05:50:00.000Z           1532238600
-#&gt; 56       B1048     5    active 2018-07-25T11:39:26.000Z           1532518766
-#&gt; 57       B1049     5    active 2018-09-10T04:45:00.000Z           1536554700
-#&gt; 58       B1051     5    active 2018-11-01T00:00:00.000Z           1541030400
-#&gt; 59       B1050     5    active 2018-12-15T00:00:00.000Z           1544832000
-#&gt;                                                  missions reuse_count
-#&gt; 1                                                    NULL           0
-#&gt; 2                                                    NULL           0
-#&gt; 3                                            FalconSat, 1           0
-#&gt; 4                                              DemoSat, 2           0
-#&gt; 5                                          Trailblazer, 3           0
-#&gt; 6                                               RatSat, 4           0
-#&gt; 7                                             RazakSat, 5           0
-#&gt; 8                                 Falcon 9 Test Flight, 6           0
-#&gt; 9                                               COTS 1, 7           0
-#&gt; 10                                              COTS 2, 8           0
-#&gt; 11                                               CRS-1, 9           0
-#&gt; 12                                              CRS-2, 10           0
-#&gt; 13                                           CASSIOPE, 11           0
-#&gt; 14                                              SES-8, 12           0
-#&gt; 15                                          Thaicom 6, 13           0
-#&gt; 16                                              CRS-3, 14           0
-#&gt; 17                                     OG-2 Mission 1, 15           0
-#&gt; 18                                          AsiaSat 8, 16           0
-#&gt; 19                                          AsiaSat 6, 17           0
-#&gt; 20                                              CRS-4, 18           0
-#&gt; 21                                              CRS-5, 19           0
-#&gt; 22                                             DSCOVR, 20           0
-#&gt; 23                           ABS-3A / Eutelsat 115W B, 21           0
-#&gt; 24                                              CRS-6, 22           0
-#&gt; 25                       TürkmenÄlem 52°E / MonacoSAT, 23           0
-#&gt; 26                                              CRS-7, 24           0
-#&gt; 27                                     OG-2 Mission 2, 25           0
-#&gt; 28                                            Jason 3, 26           0
-#&gt; 29                                              SES-9, 27           0
-#&gt; 30                                  CRS-8, SES-10, 28, 38           1
-#&gt; 31                                           JCSAT-2B, 29           0
-#&gt; 32            Thaicom 8, Falcon Heavy Test Flight, 30, 55           1
-#&gt; 33                           ABS-2A / Eutelsat 117W B, 31           0
-#&gt; 34                CRS-9, Falcon Heavy Test Flight, 32, 55           1
-#&gt; 35                                           JCSAT-16, 33           0
-#&gt; 36                                             Amos-6, 34           0
-#&gt; 37          Iridium NEXT Mission 1, BulgariaSat-1, 35, 42           1
-#&gt; 38                  CRS-10, SES-11 / Echostar 105, 36, 49           1
-#&gt; 39                                        EchoStar 23, 37           0
-#&gt; 40                     NROL-76, SES-16 / GovSat-1, 39, 54           1
-#&gt; 41                                      Inmarsat-5 F4, 40           0
-#&gt; 42                                 CRS-11, CRS-13, 41, 51           1
-#&gt; 43 Iridium NEXT Mission 2, Iridium NEXT Mission 4, 43, 52           1
-#&gt; 44                                       Intelsat 35e, 44           0
-#&gt; 45                                 CRS-12, CRS-14, 45, 59           1
-#&gt; 46                FormoSat-5, Paz / Starlink Demo, 46, 56           1
-#&gt; 47                     Boeing X-37B OTV-5, SES-12, 47, 63           1
-#&gt; 48 Iridium NEXT Mission 3, Iridium NEXT Mission 5, 48, 58           1
-#&gt; 49                                        KoreaSat 5A, 50           0
-#&gt; 50                   ZUMA, Iridium NEXT Mission 6, 53, 62           1
-#&gt; 51                           Falcon Heavy Test Flight, 55           0
-#&gt; 52                                     Hispasat 30W-6, 57           0
-#&gt; 53                                   TESS, CRS-15, 60, 64           1
-#&gt; 54                     Bangabandhu-1, Merah Putih, 61, 67           1
-#&gt; 55                         Telstar 19V, Es’hail 2, 65, 70           1
-#&gt; 56              Iridium NEXT Mission 7, SAOCOM 1A, 66, 69           1
-#&gt; 57                                        Telstar 18V, 68           0
-#&gt; 58                                                   NULL           0
-#&gt; 59                                                   NULL           0
-#&gt;    rtls_attempts rtls_landings asds_attempts asds_landings water_landing
-#&gt; 1              0             0             0             0         FALSE
-#&gt; 2              0             0             0             0         FALSE
-#&gt; 3              0             0             0             0         FALSE
-#&gt; 4              0             0             0             0         FALSE
-#&gt; 5              0             0             0             0         FALSE
-#&gt; 6              0             0             0             0         FALSE
-#&gt; 7              0             0             0             0         FALSE
-#&gt; 8              0             0             0             0         FALSE
-#&gt; 9              0             0             0             0         FALSE
-#&gt; 10             0             0             0             0         FALSE
-#&gt; 11             0             0             0             0         FALSE
-#&gt; 12             0             0             0             0         FALSE
-#&gt; 13             0             0             0             0          TRUE
-#&gt; 14             0             0             0             0         FALSE
-#&gt; 15             0             0             0             0         FALSE
-#&gt; 16             0             0             0             0          TRUE
-#&gt; 17             0             0             0             0          TRUE
-#&gt; 18             0             0             0             0         FALSE
-#&gt; 19             0             0             0             0         FALSE
-#&gt; 20             0             0             0             0          TRUE
-#&gt; 21             0             0             1             0         FALSE
-#&gt; 22             0             0             0             0          TRUE
-#&gt; 23             0             0             0             0         FALSE
-#&gt; 24             0             0             1             0         FALSE
-#&gt; 25             0             0             0             0         FALSE
-#&gt; 26             0             0             0             0         FALSE
-#&gt; 27             1             1             0             0         FALSE
-#&gt; 28             0             0             1             0         FALSE
-#&gt; 29             0             0             1             0         FALSE
-#&gt; 30             0             0             2             2         FALSE
-#&gt; 31             0             0             1             1         FALSE
-#&gt; 32             1             1             1             1         FALSE
-#&gt; 33             0             0             1             0         FALSE
-#&gt; 34             2             2             0             0         FALSE
-#&gt; 35             0             0             1             1         FALSE
-#&gt; 36             0             0             0             0         FALSE
-#&gt; 37             0             0             2             2         FALSE
-#&gt; 38             1             1             1             1         FALSE
-#&gt; 39             0             0             0             0         FALSE
-#&gt; 40             1             1             0             0          TRUE
-#&gt; 41             0             0             0             0         FALSE
-#&gt; 42             2             2             0             0         FALSE
-#&gt; 43             0             0             1             1          TRUE
-#&gt; 44             0             0             0             0         FALSE
-#&gt; 45             1             1             0             0         FALSE
-#&gt; 46             0             0             1             1         FALSE
-#&gt; 47             1             1             0             0         FALSE
-#&gt; 48             0             0             1             1         FALSE
-#&gt; 49             0             0             1             1         FALSE
-#&gt; 50             1             1             0             0         FALSE
-#&gt; 51             0             0             1             0         FALSE
-#&gt; 52             0             0             0             0         FALSE
-#&gt; 53             0             0             1             1         FALSE
-#&gt; 54             0             0             2             2         FALSE
-#&gt; 55             0             0             2             2         FALSE
-#&gt; 56             1             1             1             1         FALSE
-#&gt; 57             0             0             1             1         FALSE
-#&gt; 58             0             0             0             0         FALSE
-#&gt; 59             0             0             0             0         FALSE
+<span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"cores"</span>)</div><div class='output co'>#&gt;    core_serial block   status          original_launch original_launch_unix
+#&gt; 1     Merlin1A    NA     lost 2006-03-24T22:30:00.000Z           1143239400
+#&gt; 2     Merlin2A    NA     lost 2007-03-21T01:10:00.000Z           1174439400
+#&gt; 3     Merlin1C    NA     lost 2008-08-02T03:34:00.000Z           1217648040
+#&gt; 4     Merlin2C    NA     lost 2008-09-28T23:15:00.000Z           1222643700
+#&gt; 5     Merlin3C    NA     lost 2009-07-13T03:35:00.000Z           1247456100
+#&gt; 6        B0003     1     lost 2010-06-04T18:45:00.000Z           1275677100
+#&gt; 7        B0004     1     lost 2010-12-08T15:43:00.000Z           1291822980
+#&gt; 8        B0005     1     lost 2012-05-22T07:44:00.000Z           1335944640
+#&gt; 9        B0006     1     lost 2012-10-08T00:35:00.000Z           1349656500
+#&gt; 10       B0007     1     lost 2013-03-01T19:10:00.000Z           1362165000
+#&gt; 11       B1003     1     lost 2013-09-29T16:00:00.000Z           1380470400
+#&gt; 12       B1004     1     lost 2013-12-03T22:41:00.000Z           1386110460
+#&gt; 13       B1005     1     lost 2014-01-06T18:06:00.000Z           1389031560
+#&gt; 14       B1006     1     lost 2014-04-18T19:25:00.000Z           1397849100
+#&gt; 15       B1007     1     lost 2014-07-14T15:15:00.000Z           1405350900
+#&gt; 16       B1008     1     lost 2014-08-05T08:00:00.000Z           1407225600
+#&gt; 17       B1011     1     lost 2014-09-07T05:00:00.000Z           1410066000
+#&gt; 18       B1010     1     lost 2014-09-21T05:52:00.000Z           1411278720
+#&gt; 19       B1012     1     lost 2015-01-10T09:47:00.000Z           1420883220
+#&gt; 20       B1013     1     lost 2015-02-11T23:03:00.000Z           1423695780
+#&gt; 21       B1014     1     lost 2015-03-02T03:50:00.000Z           1425268200
+#&gt; 22       B1015     1     lost 2015-04-14T20:10:00.000Z           1429042200
+#&gt; 23       B1016     1     lost 2015-04-27T23:03:00.000Z           1430175780
+#&gt; 24       B1018     1     lost 2015-06-28T14:21:00.000Z           1435501260
+#&gt; 25       B1019     1 inactive 2015-12-22T01:29:00.000Z           1450747740
+#&gt; 26       B1017     1     lost 2016-01-17T15:42:00.000Z           1453045320
+#&gt; 27       B1020     1     lost 2016-03-04T23:35:00.000Z           1457134500
+#&gt; 28       B1021     2 inactive 2016-04-08T20:43:00.000Z           1460148180
+#&gt; 29       B1022     2 inactive 2016-05-06T05:21:00.000Z           1462512060
+#&gt; 30       B1023     2 inactive 2016-05-27T21:39:00.000Z           1464385140
+#&gt; 31       B1024     2     lost 2016-06-15T14:29:00.000Z           1466000940
+#&gt; 32       B1025     2 inactive 2016-07-18T04:45:00.000Z           1468817100
+#&gt; 33       B1026     2 inactive 2016-08-14T05:26:00.000Z           1471152360
+#&gt; 34       B1028     3     lost 2016-09-01T13:07:00.000Z           1472735220
+#&gt; 35       B1029     3 inactive 2017-01-14T17:54:00.000Z           1484416440
+#&gt; 36       B1031     3 inactive 2017-02-19T14:39:00.000Z           1487515140
+#&gt; 37       B1030     3     lost 2017-03-16T06:00:00.000Z           1489644000
+#&gt; 38       B1032     3     lost 2017-05-01T11:15:00.000Z           1493637300
+#&gt; 39       B1034     3     lost 2017-05-15T23:21:00.000Z           1494890460
+#&gt; 40       B1035     3 inactive 2017-06-03T21:07:00.000Z           1496524020
+#&gt; 41       B1036     3     lost 2017-06-25T20:25:00.000Z           1498422300
+#&gt; 42       B1037     3     lost 2017-07-05T23:35:00.000Z           1499297700
+#&gt; 43       B1039     4     lost 2017-08-14T16:31:00.000Z           1502728260
+#&gt; 44       B1038     3     lost 2017-08-24T18:50:00.000Z           1503600600
+#&gt; 45       B1040     4     lost 2017-09-07T13:50:00.000Z           1504792200
+#&gt; 46       B1041     4     lost 2017-10-09T12:37:00.000Z           1507552620
+#&gt; 47       B1042     4 inactive 2017-10-30T19:34:00.000Z           1509392040
+#&gt; 48       B1043     4     lost 2018-01-08T01:00:00.000Z           1515373200
+#&gt; 49       B1033     3     lost 2018-02-06T20:45:00.000Z           1517949900
+#&gt; 50       B1044     4     lost 2018-03-06T05:33:00.000Z           1520314380
+#&gt; 51       B1045     4     lost 2018-04-18T22:51:00.000Z           1524091860
+#&gt; 52       B1046     5     lost 2018-05-11T20:14:00.000Z           1526069640
+#&gt; 53       B1047     5     lost 2018-07-22T05:50:00.000Z           1532238600
+#&gt; 54       B1048     5     lost 2018-07-25T11:39:26.000Z           1532518766
+#&gt; 55       B1049     5   active 2018-09-10T04:45:00.000Z           1536554700
+#&gt; 56       B1050     5 inactive 2018-12-05T18:16:00.000Z           1544033760
+#&gt; 57       B1054     5     lost 2018-12-23T13:51:00.000Z           1545573060
+#&gt; 58       B1051     5  unknown 2019-03-02T07:45:00.000Z           1551512700
+#&gt; 59       B1052     5  unknown 2019-04-11T22:35:00.000Z           1555022100
+#&gt; 60       B1053     5  unknown 2019-04-11T22:35:00.000Z           1555022100
+#&gt; 61       B1055     5     lost 2019-04-11T22:35:00.000Z           1555022100
+#&gt; 62       B1056     5     lost 2019-05-04T06:48:00.000Z           1556952480
+#&gt; 63       B1057     5     lost 2019-06-25T03:30:00.000Z           1561433400
+#&gt; 64       B1059     5  unknown 2019-12-05T17:29:23.000Z           1575566963
+#&gt; 65       B1058     5  unknown 2020-05-30T19:22:00.000Z           1590866520
+#&gt;                                                                                                                  missions
+#&gt; 1                                                                                                            FalconSat, 1
+#&gt; 2                                                                                                              DemoSat, 2
+#&gt; 3                                                                                                          Trailblazer, 3
+#&gt; 4                                                                                                               RatSat, 4
+#&gt; 5                                                                                                             RazakSat, 5
+#&gt; 6                                                                                                 Falcon 9 Test Flight, 6
+#&gt; 7                                                                                                               COTS 1, 7
+#&gt; 8                                                                                                               COTS 2, 8
+#&gt; 9                                                                                                                CRS-1, 9
+#&gt; 10                                                                                                              CRS-2, 10
+#&gt; 11                                                                                                           CASSIOPE, 11
+#&gt; 12                                                                                                              SES-8, 12
+#&gt; 13                                                                                                          Thaicom 6, 13
+#&gt; 14                                                                                                              CRS-3, 14
+#&gt; 15                                                                                                     OG-2 Mission 1, 15
+#&gt; 16                                                                                                          AsiaSat 8, 16
+#&gt; 17                                                                                                          AsiaSat 6, 17
+#&gt; 18                                                                                                              CRS-4, 18
+#&gt; 19                                                                                                              CRS-5, 19
+#&gt; 20                                                                                                             DSCOVR, 20
+#&gt; 21                                                                                           ABS-3A / Eutelsat 115W B, 21
+#&gt; 22                                                                                                              CRS-6, 22
+#&gt; 23                                                                                       TürkmenÄlem 52°E / MonacoSAT, 23
+#&gt; 24                                                                                                              CRS-7, 24
+#&gt; 25                                                                                                     OG-2 Mission 2, 25
+#&gt; 26                                                                                                            Jason 3, 26
+#&gt; 27                                                                                                              SES-9, 27
+#&gt; 28                                                                                                  CRS-8, SES-10, 28, 38
+#&gt; 29                                                                                                           JCSAT-2B, 29
+#&gt; 30                                                                            Thaicom 8, Falcon Heavy Test Flight, 30, 55
+#&gt; 31                                                                                           ABS-2A / Eutelsat 117W B, 31
+#&gt; 32                                                                                CRS-9, Falcon Heavy Test Flight, 32, 55
+#&gt; 33                                                                                                           JCSAT-16, 33
+#&gt; 34                                                                                                             Amos-6, 34
+#&gt; 35                                                                          Iridium NEXT Mission 1, BulgariaSat-1, 35, 42
+#&gt; 36                                                                                  CRS-10, SES-11 / Echostar 105, 36, 49
+#&gt; 37                                                                                                        EchoStar 23, 37
+#&gt; 38                                                                                     NROL-76, SES-16 / GovSat-1, 39, 54
+#&gt; 39                                                                                                      Inmarsat-5 F4, 40
+#&gt; 40                                                                                                 CRS-11, CRS-13, 41, 51
+#&gt; 41                                                                 Iridium NEXT Mission 2, Iridium NEXT Mission 4, 43, 52
+#&gt; 42                                                                                                       Intelsat 35e, 44
+#&gt; 43                                                                                                 CRS-12, CRS-14, 45, 59
+#&gt; 44                                                                                FormoSat-5, Paz / Starlink Demo, 46, 56
+#&gt; 45                                                                                     Boeing X-37B OTV-5, SES-12, 47, 63
+#&gt; 46                                                                 Iridium NEXT Mission 3, Iridium NEXT Mission 5, 48, 58
+#&gt; 47                                                                                                        KoreaSat 5A, 50
+#&gt; 48                                                                                   ZUMA, Iridium NEXT Mission 6, 53, 62
+#&gt; 49                                                                                           Falcon Heavy Test Flight, 55
+#&gt; 50                                                                                                     Hispasat 30W-6, 57
+#&gt; 51                                                                                                   TESS, CRS-15, 60, 64
+#&gt; 52                                    Bangabandhu-1, Merah Putih, SSO-A, Crew Dragon In Flight Abort Test, 61, 67, 71, 88
+#&gt; 53                                                                            Telstar 19V, Es’hail 2, Amos-17, 65, 70, 83
+#&gt; 54 Iridium NEXT Mission 7, SAOCOM 1A, Nusantara Satu (PSN-6) / S5 / Beresheet, Starlink 1, Starlink 5, 66, 69, 75, 84, 92
+#&gt; 55                         Telstar 18V, Iridium NEXT Mission 8, Starlink v0.9, Starlink 2, Starlink 7, 68, 74, 79, 87, 95
+#&gt; 56                                                                                                             CRS-16, 72
+#&gt; 57                                                                                                       GPS III SV01, 73
+#&gt; 58                                  CCtCap Demo Mission 1, RADARSAT Constellation, Starlink 3, Starlink 6, 76, 80, 89, 93
+#&gt; 59                                                                                              ArabSat 6A, STP-2, 77, 81
+#&gt; 60                                                                                              ArabSat 6A, STP-2, 77, 81
+#&gt; 61                                                                                                         ArabSat 6A, 77
+#&gt; 62                                                       CRS-17, CRS-18, JCSat 18 / Kacific 1, Starlink 4, 78, 82, 86, 90
+#&gt; 63                                                                                                              STP-2, 81
+#&gt; 64                                                                                                 CRS-19, CRS-20, 85, 91
+#&gt; 65                                                                                              CCtCap Demo Mission 2, 94
+#&gt;    reuse_count rtls_attempts rtls_landings asds_attempts asds_landings
+#&gt; 1            0             0             0             0             0
+#&gt; 2            0             0             0             0             0
+#&gt; 3            0             0             0             0             0
+#&gt; 4            0             0             0             0             0
+#&gt; 5            0             0             0             0             0
+#&gt; 6            0             0             0             0             0
+#&gt; 7            0             0             0             0             0
+#&gt; 8            0             0             0             0             0
+#&gt; 9            0             0             0             0             0
+#&gt; 10           0             0             0             0             0
+#&gt; 11           0             0             0             0             0
+#&gt; 12           0             0             0             0             0
+#&gt; 13           0             0             0             0             0
+#&gt; 14           0             0             0             0             0
+#&gt; 15           0             0             0             0             0
+#&gt; 16           0             0             0             0             0
+#&gt; 17           0             0             0             0             0
+#&gt; 18           0             0             0             0             0
+#&gt; 19           0             0             0             1             0
+#&gt; 20           0             0             0             0             0
+#&gt; 21           0             0             0             0             0
+#&gt; 22           0             0             0             1             0
+#&gt; 23           0             0             0             0             0
+#&gt; 24           0             0             0             0             0
+#&gt; 25           0             1             1             0             0
+#&gt; 26           0             0             0             1             0
+#&gt; 27           0             0             0             1             0
+#&gt; 28           1             0             0             2             2
+#&gt; 29           0             0             0             1             1
+#&gt; 30           1             1             1             1             1
+#&gt; 31           0             0             0             1             0
+#&gt; 32           1             2             2             0             0
+#&gt; 33           0             0             0             1             1
+#&gt; 34           0             0             0             0             0
+#&gt; 35           1             0             0             2             2
+#&gt; 36           1             1             1             1             1
+#&gt; 37           0             0             0             0             0
+#&gt; 38           1             1             1             0             0
+#&gt; 39           0             0             0             0             0
+#&gt; 40           1             2             2             0             0
+#&gt; 41           1             0             0             1             1
+#&gt; 42           0             0             0             0             0
+#&gt; 43           1             1             1             0             0
+#&gt; 44           1             0             0             1             1
+#&gt; 45           1             1             1             0             0
+#&gt; 46           1             0             0             1             1
+#&gt; 47           0             0             0             1             1
+#&gt; 48           1             1             1             0             0
+#&gt; 49           0             0             0             1             0
+#&gt; 50           0             0             0             0             0
+#&gt; 51           1             0             0             1             1
+#&gt; 52           3             0             0             3             3
+#&gt; 53           2             0             0             2             2
+#&gt; 54           4             1             1             4             3
+#&gt; 55           4             0             0             5             5
+#&gt; 56           0             1             0             0             0
+#&gt; 57           0             0             0             0             0
+#&gt; 58           3             1             1             3             3
+#&gt; 59           1             2             2             0             0
+#&gt; 60           1             2             2             0             0
+#&gt; 61           0             0             0             1             1
+#&gt; 62           3             1             1             3             2
+#&gt; 63           0             0             0             1             0
+#&gt; 64           1             1             1             1             1
+#&gt; 65           0             0             0             1             1
+#&gt;    water_landing
+#&gt; 1          FALSE
+#&gt; 2          FALSE
+#&gt; 3          FALSE
+#&gt; 4          FALSE
+#&gt; 5          FALSE
+#&gt; 6          FALSE
+#&gt; 7          FALSE
+#&gt; 8          FALSE
+#&gt; 9          FALSE
+#&gt; 10         FALSE
+#&gt; 11          TRUE
+#&gt; 12         FALSE
+#&gt; 13         FALSE
+#&gt; 14          TRUE
+#&gt; 15          TRUE
+#&gt; 16         FALSE
+#&gt; 17         FALSE
+#&gt; 18          TRUE
+#&gt; 19         FALSE
+#&gt; 20          TRUE
+#&gt; 21         FALSE
+#&gt; 22         FALSE
+#&gt; 23         FALSE
+#&gt; 24         FALSE
+#&gt; 25         FALSE
+#&gt; 26         FALSE
+#&gt; 27         FALSE
+#&gt; 28         FALSE
+#&gt; 29         FALSE
+#&gt; 30         FALSE
+#&gt; 31         FALSE
+#&gt; 32         FALSE
+#&gt; 33         FALSE
+#&gt; 34         FALSE
+#&gt; 35         FALSE
+#&gt; 36         FALSE
+#&gt; 37         FALSE
+#&gt; 38          TRUE
+#&gt; 39         FALSE
+#&gt; 40         FALSE
+#&gt; 41          TRUE
+#&gt; 42         FALSE
+#&gt; 43         FALSE
+#&gt; 44         FALSE
+#&gt; 45         FALSE
+#&gt; 46         FALSE
+#&gt; 47         FALSE
+#&gt; 48         FALSE
+#&gt; 49         FALSE
+#&gt; 50         FALSE
+#&gt; 51         FALSE
+#&gt; 52         FALSE
+#&gt; 53         FALSE
+#&gt; 54         FALSE
+#&gt; 55         FALSE
+#&gt; 56          TRUE
+#&gt; 57         FALSE
+#&gt; 58         FALSE
+#&gt; 59         FALSE
+#&gt; 60         FALSE
+#&gt; 61         FALSE
+#&gt; 62         FALSE
+#&gt; 63         FALSE
+#&gt; 64         FALSE
+#&gt; 65         FALSE
 #&gt;                                                                                                                                                                                       details
-#&gt; 1                                                                                                                                                                  On test stand at McGregor.
-#&gt; 2                                                                                                                                                                        Testing at McGregor.
-#&gt; 3                                                                                                                                  Engine failure at T+33 seconds resulted in loss of vehicle
-#&gt; 4  Successful first-stage burn and transition to second stage, maximal altitude 289 km. Harmonic oscillation at T+5 minutes Premature engine shutdown at T+7 min 30 s. Failed to reach orbit.
-#&gt; 5                                                                                                                       Residual stage-1 thrust led to collision between stage 1 and stage 2.
-#&gt; 6                                                                      Initially scheduled for 23–25 Sep, carried dummy payload – mass simulator, 165 kg (originally intended to be RazakSAT.
-#&gt; 7                                                                                                                                                                                        &lt;NA&gt;
-#&gt; 8                                                                                                                       Core expended on flight, no recovery effort. First flight of Falcon 9
-#&gt; 9                                                                                                                                                                      First flight of Dragon
+#&gt; 1                                                                                                                                  Engine failure at T+33 seconds resulted in loss of vehicle
+#&gt; 2  Successful first-stage burn and transition to second stage, maximal altitude 289 km. Harmonic oscillation at T+5 minutes Premature engine shutdown at T+7 min 30 s. Failed to reach orbit.
+#&gt; 3                                                                                                                       Residual stage-1 thrust led to collision between stage 1 and stage 2.
+#&gt; 4                                                                      Initially scheduled for 23–25 Sep, carried dummy payload – mass simulator, 165 kg (originally intended to be RazakSAT.
+#&gt; 5                                                                                                                                                                                        &lt;NA&gt;
+#&gt; 6                                                                                                                                                                              Stage Expended
+#&gt; 7                                                                                                                                                                      First flight of Dragon
+#&gt; 8                                                                                                                                                                                        &lt;NA&gt;
+#&gt; 9                                                                                                                                Suffered engine out at T+1:19 but primary mission successful
 #&gt; 10                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 11                                                                                                                               Suffered engine out at T+1:19 but primary mission successful
+#&gt; 11                                                                                                                 First flight of Falcon 9 v1.1 upgrade, first Spacex flight from Vandenberg
 #&gt; 12                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 13                                                                                                                 First flight of Falcon 9 v1.1 upgrade, first Spacex flight from Vandenberg
-#&gt; 14                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 15                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 16                                                                                                                                                     Broke up after sucessful water landing
-#&gt; 17                                                                                                                                                     Broke up after sucessful water landing
-#&gt; 18                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 19                                                                                                                                                                                       &lt;NA&gt;
+#&gt; 13                                                                                                                                                                                       &lt;NA&gt;
+#&gt; 14                                                                                                                                                     Broke up after sucessful water landing
+#&gt; 15                                                                                                                                                     Broke up after sucessful water landing
+#&gt; 16                                                                                                                                                                                       &lt;NA&gt;
+#&gt; 17                                                                                                                                                                                       &lt;NA&gt;
+#&gt; 18                                                                                                                                                     Broke up after sucessful water landing
+#&gt; 19                                                                                                                      Destroyed on impact with droneship, grid fin hydraulic fluid depleted
 #&gt; 20                                                                                                                                                     Broke up after sucessful water landing
-#&gt; 21                                                                                                                      Destroyed on impact with droneship, grid fin hydraulic fluid depleted
-#&gt; 22                                                                                                                                                     Broke up after sucessful water landing
+#&gt; 21                                                                                                                                                                                       &lt;NA&gt;
+#&gt; 22                                                                                                      Destroyed on impact with droneship due to excess lateral velocity - throttle stiction
 #&gt; 23                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 24                                                                                                      Destroyed on impact with droneship due to excess lateral velocity - throttle stiction
-#&gt; 25                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 26                                                                                                   RUD at T + 139s - second stage overpressure event due to defective COPV strut heim joint
-#&gt; 27                                                                                                                                         First recovered stage, first return to launch site
-#&gt; 28                                                                                                                              Destroyed after drone ship landing due to landing leg failure
-#&gt; 29                                                                                                       Destroyed on impact with drone ship due to excess velocity, possible fuel exhaustion
-#&gt; 30                                         First drone ship landing, first orbital booster to be reflown, first orbital booster to be landed twice, will be given as a gift to Cape Canaveral
-#&gt; 31                                                                                        First recovered booster from a GTO mission, in storage, and due to be retired after ten test cycles
-#&gt; 32                                                                                                                         Converted to side booster for Falcon Heavy, retired after FH Demo.
-#&gt; 33                                                                                                                                                                  RUD on deck of drone ship
-#&gt; 34                                                                                                                         Converted to side booster for Falcon Heavy, retired after FH Demo.
-#&gt; 35                                                                                                                                                                       Permanently scrapped
-#&gt; 36                                                                                                                                          Destroyed on launchpad during static fire anomaly
-#&gt; 37                                                                                      Second booster to be reflown, Completed sucessful launch of BulgariaSat-1 and ASDS landing on 6/23/17
-#&gt; 38                                                                                                                                      Daytime RTLS landing, helped launch CRS-10 to the ISS
-#&gt; 39                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 40                                                                                                                       Daytime RTLS landing, helped launch first SpaceX mission for the NRO
-#&gt; 41                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 42                                                                                                                                      Daytime RTLS landing, helped launch CRS-11 to the ISS
-#&gt; 43                                                                                                                                                                  Destroyed by waterlanding
-#&gt; 44                                                                                                                                        Core will be expended on flight, no recovery effort
-#&gt; 45                                                                                                                                                                  Flew expendable on CRS-14
-#&gt; 46                                                                                                               Helped launch FormoSat-5. Will now fly expendable on Paz &amp; Microsat-2a, -2b.
-#&gt; 47                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 48                                                                                                                                              Will fly expendable on Iridium NEXT Mission 5
-#&gt; 49                                                                                                                   The Octaweb caught on fire right after Landing due to an RP-1 fuel leak.
-#&gt; 50                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 51                                                                                                                                                    Failed landing after Falcon Heavy Demo.
-#&gt; 52                                                                                                      Core expended on Hispasat flight. Water landing attempted, but the result is unknown.
-#&gt; 53                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 54                                                                                                                                                                        First block V core.
-#&gt; 55                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 56                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 57                                                                                                                                                                                       &lt;NA&gt;
-#&gt; 58                                                                                                                                                                               At McGregor.
-#&gt; 59                                                                                                                                                                En-route to Cape Canaveral.</div><div class='input'>
+#&gt; 24                                                                                                   RUD at T + 139s - second stage overpressure event due to defective COPV strut heim joint
+#&gt; 25                                                                                                                                 Retired; permanently displayed at Hawthorne headquarters. 
+#&gt; 26                                                                                                                              Destroyed after drone ship landing due to landing leg failure
+#&gt; 27                                                                                                    Destroyed on Impact with DroneShip (OCISLY) - Excess Velocity, Possible Fuel Exhaustion
+#&gt; 28                                                                                                                                                Core will be given as a gift to the Cape.  
+#&gt; 29                                              Removed from active fleet for Δ Qualification Testing. Retired after eight to ten test cycles.  Currently partially disassembled at McGregor.
+#&gt; 30                                                                                                                                                                     *At LZ1 as 2018/02/06 
+#&gt; 31                                                                                                                                                          RUD on deck of droneship (OCISLY)
+#&gt; 32                                                                                                                                                                     *At LZ2 as 2018/02/06 
+#&gt; 33                                                                                                                                                                    Permanently scrapped.  
+#&gt; 34                                                                                                                                                                                        ---
+#&gt; 35                                                                                                                                                     Will be given to KSC Visitors Center. 
+#&gt; 36                                                                                                                     Stored outside at McGregor, partially disassembled (missing engines). 
+#&gt; 37                                                                                                                                                                             Stage Expended
+#&gt; 38                                                                                      Survived water landing, SpaceX couldn't tug it back to port, so they hired a company to destroy it.  
+#&gt; 39                                                                                                                                                                             Stage Expended
+#&gt; 40                                                                                                                               To be moved to Space Center Houston for display this summer.
+#&gt; 41                                                                                                                                                    Broke Up After Successful Water Landing
+#&gt; 42                                                                                                                                                                             Stage Expended
+#&gt; 43                                                                                                                                                                             Stage Expended
+#&gt; 44                                                                                                                                                                             Stage Expended
+#&gt; 45                                                                                                                                                                             Stage Expended
+#&gt; 46                                                                                                                                                                             Stage Expended
+#&gt; 47                                                                                                                                                                                  Retired. 
+#&gt; 48                                                                                                                                                                             Stage Expended
+#&gt; 49                                                                                              Two of the outer engines didn't re-ignite for the landing burn, ran out of TEA/TEB igniters. 
+#&gt; 50                                                                                                                                                                             Stage Expended
+#&gt; 51                                                                                                                                                                             Stage Expended
+#&gt; 52                                                                                                                                                                             Stage Expended
+#&gt; 53                                                                                                                                                                             Stage Expended
+#&gt; 54                                                                                                                   Landing burn not performed after premature engine shutdown during ascent
+#&gt; 55                                                                                                                                                                 At SLC-40 awaiting launch.
+#&gt; 56                                                                                                                   Towed to Port of Canaveral; cannibalized for parts to build Starhopper. 
+#&gt; 57                                                                                                                                                                             Stage Expended
+#&gt; 58                                                                                                                                                      Landed on OCISLY as of Apr 22, 2020. 
+#&gt; 59                                                                                                                                                        Landed at LZ-1 as of Jun 25, 2019. 
+#&gt; 60                                                                                                                                                        Landed at LZ-2 as of Jun 25, 2019. 
+#&gt; 61                                                                                                                 Toppled by rough seas and broken in two after safely landing aboard OCISLY
+#&gt; 62                                                                                             Missed the droneship and made successful water landing; apparently scuttled at sea afterward. 
+#&gt; 63                                                                                                                                     Exploded upon ocean impact a safe distance from OCISLY
+#&gt; 64                                                                                                                                                         Landed at LZ-1 as of Mar 7, 2020. 
+#&gt; 65                                                                                                                                                       Landed on OCISLY as of May 30, 2020 </div><div class='input'>
 <span class='co'>## get details about all capsules</span>
 <span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"caps"</span>)</div><div class='output co'>#&gt;    capsule_serial capsule_id    status          original_launch
-#&gt; 1            C201    dragon2    active                     &lt;NA&gt;
-#&gt; 2            C202    dragon2    active                     &lt;NA&gt;
-#&gt; 3            C203    dragon2    active                     &lt;NA&gt;
-#&gt; 4            C204    dragon2    active                     &lt;NA&gt;
-#&gt; 5            C205    dragon2    active                     &lt;NA&gt;
-#&gt; 6            C101    dragon1   retired 2010-12-08T15:43:00.000Z
-#&gt; 7            C102    dragon1   retired 2012-05-02T07:44:00.000Z
-#&gt; 8            C103    dragon1   unknown 2012-10-08T00:35:00.000Z
-#&gt; 9            C104    dragon1   unknown 2013-03-01T19:10:00.000Z
-#&gt; 10           C105    dragon1   unknown 2014-04-18T19:25:00.000Z
-#&gt; 11           C106    dragon1    active 2014-09-21T05:52:00.000Z
-#&gt; 12           C107    dragon1   unknown 2015-01-10T09:47:00.000Z
-#&gt; 13           C108    dragon1    active 2015-04-14T20:10:00.000Z
-#&gt; 14           C109    dragon1 destroyed 2015-06-28T14:21:00.000Z
-#&gt; 15           C110    dragon1    active 2016-04-08T20:43:00.000Z
-#&gt; 16           C111    dragon1    active 2016-07-18T04:45:00.000Z
-#&gt; 17           C112    dragon1    active 2017-02-19T14:39:00.000Z
-#&gt; 18           C113    dragon1    active 2017-08-14T16:31:00.000Z
-#&gt;    original_launch_unix              missions landings       type
-#&gt; 1                    NA                  NULL        0 Dragon 2.0
-#&gt; 2                    NA                  NULL        0 Dragon 2.0
-#&gt; 3                    NA                  NULL        0 Dragon 2.0
-#&gt; 4                    NA                  NULL        0 Dragon 2.0
-#&gt; 5                    NA                  NULL        0 Dragon 2.0
-#&gt; 6            1291822980             COTS 1, 7        0 Dragon 1.0
-#&gt; 7            1335944640             COTS 2, 8        1 Dragon 1.0
-#&gt; 8            1349656500              CRS-1, 9        1 Dragon 1.0
-#&gt; 9            1362165000             CRS-2, 10        1 Dragon 1.0
-#&gt; 10           1397849100             CRS-3, 14        1 Dragon 1.1
-#&gt; 11           1411278720 CRS-4, CRS-11, 18, 41        2 Dragon 1.1
-#&gt; 12           1420883220             CRS-5, 19        1 Dragon 1.1
-#&gt; 13           1429042200 CRS-6, CRS-13, 22, 51        2 Dragon 1.1
-#&gt; 14           1435501260             CRS-7, 24        0 Dragon 1.1
-#&gt; 15           1460148180 CRS-8, CRS-14, 28, 59        2 Dragon 1.1
-#&gt; 16           1468817100 CRS-9, CRS-15, 32, 64        2 Dragon 1.1
-#&gt; 17           1487515140            CRS-10, 36        1 Dragon 1.1
-#&gt; 18           1502728260            CRS-12, 45        1 Dragon 1.1
-#&gt;                                                                                                        details
-#&gt; 1  Pressure vessel used for Dragon 2 structural testing. Rumored to be repurposed for first Red Dragon Mission
-#&gt; 2                           Capsule used to qualify Dragon 2's environmental control and life support systems.
-#&gt; 3                                                        Rumored to be used for Inflight Abort Test after DM-1
-#&gt; 4                                                                    Currently in construction for use in DM-2
-#&gt; 5                               In construction for use in first mission in contract under the CCtCap contract
-#&gt; 6                                                                         Reentered after three weeks in orbit
-#&gt; 7                                                                                      First Dragon spacecraft
-#&gt; 8                                                       First of twenty missions flown under the CRS1 contract
-#&gt; 9                                                                                                         &lt;NA&gt;
-#&gt; 10                                                                                   First Dragon v1.1 capsule
-#&gt; 11                                                                           First Dragon capsule to be reused
-#&gt; 12                                                                                                        &lt;NA&gt;
-#&gt; 13                                                                          Second Dragon capsule to be reused
-#&gt; 14                                                                 Destroyed on impact after F9 launch failure
-#&gt; 15                                                                                                        &lt;NA&gt;
-#&gt; 16                                                                                                        &lt;NA&gt;
-#&gt; 17                                                                                                        &lt;NA&gt;
-#&gt; 18                                                                        The last newly manufactured Dragon 1
+#&gt; 1            C202    dragon2    active                     &lt;NA&gt;
+#&gt; 2            C203    dragon2    active                     &lt;NA&gt;
+#&gt; 3            C204    dragon2    active                     &lt;NA&gt;
+#&gt; 4            C101    dragon1   retired 2010-12-08T15:43:00.000Z
+#&gt; 5            C102    dragon1   retired 2012-05-22T07:44:00.000Z
+#&gt; 6            C103    dragon1   unknown 2012-10-08T00:35:00.000Z
+#&gt; 7            C104    dragon1   unknown 2013-03-01T19:10:00.000Z
+#&gt; 8            C105    dragon1   unknown 2014-04-18T19:25:00.000Z
+#&gt; 9            C106    dragon1    active 2014-09-21T05:52:00.000Z
+#&gt; 10           C107    dragon1   unknown 2015-01-10T09:47:00.000Z
+#&gt; 11           C108    dragon1    active 2015-04-14T20:10:00.000Z
+#&gt; 12           C109    dragon1 destroyed 2015-06-28T14:21:00.000Z
+#&gt; 13           C110    dragon1    active 2016-04-08T20:43:00.000Z
+#&gt; 14           C111    dragon1    active 2016-07-18T04:45:00.000Z
+#&gt; 15           C112    dragon1    active 2017-02-19T14:39:00.000Z
+#&gt; 16           C113    dragon1    active 2017-08-14T16:31:00.000Z
+#&gt; 17           C201    dragon2    active 2019-03-02T07:45:00.000Z
+#&gt; 18           C205    dragon2    active 2020-01-19T14:00:00.000Z
+#&gt; 19           C206    dragon2    active 2020-05-30T19:22:00.000Z
+#&gt;    original_launch_unix                             missions landings
+#&gt; 1                    NA                                 NULL        0
+#&gt; 2                    NA                                 NULL        0
+#&gt; 3                    NA                                 NULL        0
+#&gt; 4            1291822980                            COTS 1, 7        0
+#&gt; 5            1335944640                            COTS 2, 8        1
+#&gt; 6            1349656500                             CRS-1, 9        1
+#&gt; 7            1362165000                            CRS-2, 10        1
+#&gt; 8            1397849100                            CRS-3, 14        1
+#&gt; 9            1411278720    CRS-4, CRS-11, CRS-19, 18, 41, 85        3
+#&gt; 10           1420883220                            CRS-5, 19        1
+#&gt; 11           1429042200    CRS-6, CRS-13, CRS-18, 22, 51, 82        3
+#&gt; 12           1435501260                            CRS-7, 24        0
+#&gt; 13           1460148180                CRS-8, CRS-14, 28, 59        2
+#&gt; 14           1468817100                CRS-9, CRS-15, 32, 64        2
+#&gt; 15           1487515140   CRS-10, CRS-16, CRS-20, 36, 72, 91        3
+#&gt; 16           1502728260               CRS-12, CRS-17, 45, 78        2
+#&gt; 17           1551512700            CCtCap Demo Mission 1, 76        1
+#&gt; 18           1579442400 Crew Dragon In Flight Abort Test, 88        1
+#&gt; 19           1590866520            CCtCap Demo Mission 2, 94        1
+#&gt;          type
+#&gt; 1  Dragon 2.0
+#&gt; 2  Dragon 2.0
+#&gt; 3  Dragon 2.0
+#&gt; 4  Dragon 1.0
+#&gt; 5  Dragon 1.0
+#&gt; 6  Dragon 1.0
+#&gt; 7  Dragon 1.0
+#&gt; 8  Dragon 1.1
+#&gt; 9  Dragon 1.1
+#&gt; 10 Dragon 1.1
+#&gt; 11 Dragon 1.1
+#&gt; 12 Dragon 1.1
+#&gt; 13 Dragon 1.1
+#&gt; 14 Dragon 1.1
+#&gt; 15 Dragon 1.1
+#&gt; 16 Dragon 1.1
+#&gt; 17 Dragon 2.0
+#&gt; 18 Dragon 2.0
+#&gt; 19 Dragon 2.0
+#&gt;                                                                                                  details
+#&gt; 1                     Capsule used to qualify Dragon 2's environmental control and life support systems.
+#&gt; 2                                                  Rumored to be used for Inflight Abort Test after DM-1
+#&gt; 3                                                              Currently in construction for use in DM-2
+#&gt; 4                                                                   Reentered after three weeks in orbit
+#&gt; 5                                                                                First Dragon spacecraft
+#&gt; 6                                                 First of twenty missions flown under the CRS1 contract
+#&gt; 7                                                                                                   &lt;NA&gt;
+#&gt; 8                                                                              First Dragon v1.1 capsule
+#&gt; 9                                                                      First Dragon capsule to be reused
+#&gt; 10                                                                                                  &lt;NA&gt;
+#&gt; 11                                                                    Second Dragon capsule to be reused
+#&gt; 12                                                           Destroyed on impact after F9 launch failure
+#&gt; 13                                                                                                  &lt;NA&gt;
+#&gt; 14                                                                                                  &lt;NA&gt;
+#&gt; 15                                                                                                  &lt;NA&gt;
+#&gt; 16                                                                  The last newly manufactured Dragon 1
+#&gt; 17                                                 Destroyed in a test anomaly at LZ-1 on April 20, 2019
+#&gt; 18                        In construction for use in first mission in contract under the CCtCap contract
+#&gt; 19 In Hawthorne, CA as of October 11, 2019. Seen in background during Musk/Bridenstine press conference.
 #&gt;    reuse_count
 #&gt; 1            0
 #&gt; 2            0
@@ -508,65 +620,83 @@ or "cores" for core details.</p></td>
 #&gt; 6            0
 #&gt; 7            0
 #&gt; 8            0
-#&gt; 9            0
+#&gt; 9            2
 #&gt; 10           0
-#&gt; 11           1
+#&gt; 11           2
 #&gt; 12           0
 #&gt; 13           1
-#&gt; 14           0
-#&gt; 15           1
+#&gt; 14           1
+#&gt; 15           2
 #&gt; 16           1
 #&gt; 17           0
-#&gt; 18           0</div><div class='input'>
+#&gt; 18           0
+#&gt; 19           0</div><div class='input'>
 <span class='co'>## get details about all active capsules</span>
 <span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"caps"</span>, <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"active"</span>)</div><div class='output co'>#&gt;    capsule_serial capsule_id status          original_launch
-#&gt; 1            C201    dragon2 active                     &lt;NA&gt;
-#&gt; 2            C202    dragon2 active                     &lt;NA&gt;
-#&gt; 3            C203    dragon2 active                     &lt;NA&gt;
-#&gt; 4            C204    dragon2 active                     &lt;NA&gt;
-#&gt; 5            C205    dragon2 active                     &lt;NA&gt;
-#&gt; 6            C106    dragon1 active 2014-09-21T05:52:00.000Z
-#&gt; 7            C108    dragon1 active 2015-04-14T20:10:00.000Z
-#&gt; 8            C110    dragon1 active 2016-04-08T20:43:00.000Z
-#&gt; 9            C111    dragon1 active 2016-07-18T04:45:00.000Z
-#&gt; 10           C112    dragon1 active 2017-02-19T14:39:00.000Z
-#&gt; 11           C113    dragon1 active 2017-08-14T16:31:00.000Z
-#&gt;    original_launch_unix              missions landings       type
-#&gt; 1                    NA                  NULL        0 Dragon 2.0
-#&gt; 2                    NA                  NULL        0 Dragon 2.0
-#&gt; 3                    NA                  NULL        0 Dragon 2.0
-#&gt; 4                    NA                  NULL        0 Dragon 2.0
-#&gt; 5                    NA                  NULL        0 Dragon 2.0
-#&gt; 6            1411278720 CRS-4, CRS-11, 18, 41        2 Dragon 1.1
-#&gt; 7            1429042200 CRS-6, CRS-13, 22, 51        2 Dragon 1.1
-#&gt; 8            1460148180 CRS-8, CRS-14, 28, 59        2 Dragon 1.1
-#&gt; 9            1468817100 CRS-9, CRS-15, 32, 64        2 Dragon 1.1
-#&gt; 10           1487515140            CRS-10, 36        1 Dragon 1.1
-#&gt; 11           1502728260            CRS-12, 45        1 Dragon 1.1
-#&gt;                                                                                                        details
-#&gt; 1  Pressure vessel used for Dragon 2 structural testing. Rumored to be repurposed for first Red Dragon Mission
-#&gt; 2                           Capsule used to qualify Dragon 2's environmental control and life support systems.
-#&gt; 3                                                        Rumored to be used for Inflight Abort Test after DM-1
-#&gt; 4                                                                    Currently in construction for use in DM-2
-#&gt; 5                               In construction for use in first mission in contract under the CCtCap contract
-#&gt; 6                                                                            First Dragon capsule to be reused
-#&gt; 7                                                                           Second Dragon capsule to be reused
-#&gt; 8                                                                                                         &lt;NA&gt;
-#&gt; 9                                                                                                         &lt;NA&gt;
-#&gt; 10                                                                                                        &lt;NA&gt;
-#&gt; 11                                                                        The last newly manufactured Dragon 1
+#&gt; 1            C202    dragon2 active                     &lt;NA&gt;
+#&gt; 2            C203    dragon2 active                     &lt;NA&gt;
+#&gt; 3            C204    dragon2 active                     &lt;NA&gt;
+#&gt; 4            C106    dragon1 active 2014-09-21T05:52:00.000Z
+#&gt; 5            C108    dragon1 active 2015-04-14T20:10:00.000Z
+#&gt; 6            C110    dragon1 active 2016-04-08T20:43:00.000Z
+#&gt; 7            C111    dragon1 active 2016-07-18T04:45:00.000Z
+#&gt; 8            C112    dragon1 active 2017-02-19T14:39:00.000Z
+#&gt; 9            C113    dragon1 active 2017-08-14T16:31:00.000Z
+#&gt; 10           C201    dragon2 active 2019-03-02T07:45:00.000Z
+#&gt; 11           C205    dragon2 active 2020-01-19T14:00:00.000Z
+#&gt; 12           C206    dragon2 active 2020-05-30T19:22:00.000Z
+#&gt;    original_launch_unix                             missions landings
+#&gt; 1                    NA                                 NULL        0
+#&gt; 2                    NA                                 NULL        0
+#&gt; 3                    NA                                 NULL        0
+#&gt; 4            1411278720    CRS-4, CRS-11, CRS-19, 18, 41, 85        3
+#&gt; 5            1429042200    CRS-6, CRS-13, CRS-18, 22, 51, 82        3
+#&gt; 6            1460148180                CRS-8, CRS-14, 28, 59        2
+#&gt; 7            1468817100                CRS-9, CRS-15, 32, 64        2
+#&gt; 8            1487515140   CRS-10, CRS-16, CRS-20, 36, 72, 91        3
+#&gt; 9            1502728260               CRS-12, CRS-17, 45, 78        2
+#&gt; 10           1551512700            CCtCap Demo Mission 1, 76        1
+#&gt; 11           1579442400 Crew Dragon In Flight Abort Test, 88        1
+#&gt; 12           1590866520            CCtCap Demo Mission 2, 94        1
+#&gt;          type
+#&gt; 1  Dragon 2.0
+#&gt; 2  Dragon 2.0
+#&gt; 3  Dragon 2.0
+#&gt; 4  Dragon 1.1
+#&gt; 5  Dragon 1.1
+#&gt; 6  Dragon 1.1
+#&gt; 7  Dragon 1.1
+#&gt; 8  Dragon 1.1
+#&gt; 9  Dragon 1.1
+#&gt; 10 Dragon 2.0
+#&gt; 11 Dragon 2.0
+#&gt; 12 Dragon 2.0
+#&gt;                                                                                                  details
+#&gt; 1                     Capsule used to qualify Dragon 2's environmental control and life support systems.
+#&gt; 2                                                  Rumored to be used for Inflight Abort Test after DM-1
+#&gt; 3                                                              Currently in construction for use in DM-2
+#&gt; 4                                                                      First Dragon capsule to be reused
+#&gt; 5                                                                     Second Dragon capsule to be reused
+#&gt; 6                                                                                                   &lt;NA&gt;
+#&gt; 7                                                                                                   &lt;NA&gt;
+#&gt; 8                                                                                                   &lt;NA&gt;
+#&gt; 9                                                                   The last newly manufactured Dragon 1
+#&gt; 10                                                 Destroyed in a test anomaly at LZ-1 on April 20, 2019
+#&gt; 11                        In construction for use in first mission in contract under the CCtCap contract
+#&gt; 12 In Hawthorne, CA as of October 11, 2019. Seen in background during Musk/Bridenstine press conference.
 #&gt;    reuse_count
 #&gt; 1            0
 #&gt; 2            0
 #&gt; 3            0
-#&gt; 4            0
-#&gt; 5            0
+#&gt; 4            2
+#&gt; 5            2
 #&gt; 6            1
 #&gt; 7            1
-#&gt; 8            1
+#&gt; 8            2
 #&gt; 9            1
 #&gt; 10           0
-#&gt; 11           0</div><div class='input'>
+#&gt; 11           0
+#&gt; 12           0</div><div class='input'>
 <span class='co'>## get details about core B1041</span>
 <span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"cores"</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"B1041"</span>)</div><div class='output co'>#&gt; $core_serial
 #&gt; [1] "B1041"
@@ -575,7 +705,7 @@ or "cores" for core details.</p></td>
 #&gt; [1] 4
 #&gt; 
 #&gt; $status
-#&gt; [1] "expended"
+#&gt; [1] "lost"
 #&gt; 
 #&gt; $original_launch
 #&gt; [1] "2017-10-09T12:37:00.000Z"
@@ -607,24 +737,17 @@ or "cores" for core details.</p></td>
 #&gt; [1] FALSE
 #&gt; 
 #&gt; $details
-#&gt; [1] "Will fly expendable on Iridium NEXT Mission 5"
+#&gt; [1] "Stage Expended"
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -632,13 +755,16 @@ or "cores" for core details.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

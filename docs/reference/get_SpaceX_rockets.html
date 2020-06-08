@@ -8,21 +8,29 @@
 
 <title>GET info about SpaceX rockets — get_SpaceX_rockets • EcoCounteR</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +38,10 @@
 
 
 
-<meta property="og:title" content="GET info about SpaceX rockets — get_SpaceX_rockets" />
 
+<meta property="og:title" content="GET info about SpaceX rockets — get_SpaceX_rockets" />
 <meta property="og:description" content="GET info about SpaceX rockets" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -57,9 +65,10 @@
   gtag('config', 'UA-84499524-2');
 </script>
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -93,7 +102,6 @@
   </a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../news/index.html">
@@ -123,6 +131,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -134,41 +143,38 @@
     </div>
 
     <div class="ref-description">
-    
     <p>GET info about SpaceX rockets</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>get_SpaceX_rockets</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>name</th>
-      <td><p><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a>: Name of the rocket. Choose between "falcon1", "falcon9" or "falconheavy".
+      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Name of the rocket. Choose between "falcon1", "falcon9" or "falconheavy".
 By default all three rocket data are returned.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a> with parsed data from SpaceX API.</p>
-    
+    <p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with parsed data from SpaceX API.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## get details about all rockets</span>
-<span class='fu'>get_SpaceX_rockets</span>()</div><div class='output co'>#&gt;   rocketid          id              name   type active stages boosters
-#&gt; 1        1     falcon1          Falcon 1 rocket  FALSE      2        0
-#&gt; 2        2     falcon9          Falcon 9 rocket   TRUE      2        0
-#&gt; 3        3 falconheavy      Falcon Heavy rocket   TRUE      2        2
-#&gt; 4        4         bfr Big Falcon Rocket rocket  FALSE      2        0
+<span class='fu'>get_SpaceX_rockets</span>()</div><div class='output co'>#&gt;   rocketid          id         name   type active stages boosters
+#&gt; 1        1     falcon1     Falcon 1 rocket  FALSE      2        0
+#&gt; 2        2     falcon9     Falcon 9 rocket   TRUE      2        0
+#&gt; 3        3 falconheavy Falcon Heavy rocket   TRUE      2        2
+#&gt; 4        4    starship     Starship rocket  FALSE      2        0
 #&gt;   cost_per_launch success_rate_pct first_flight
 #&gt; 1         6700000               40   2006-03-24
 #&gt; 2        50000000               97   2010-06-04
 #&gt; 3        90000000              100   2018-02-06
-#&gt; 4         7000000                0   2019-12-01
+#&gt; 4         7000000                0   2021-12-01
 #&gt;                            country company height.meters height.feet
 #&gt; 1 Republic of the Marshall Islands  SpaceX         22.25        73.0
 #&gt; 2                    United States  SpaceX         70.00       229.6
@@ -178,17 +184,17 @@ By default all three rocket data are returned.</p></td>
 #&gt; 1            1.68           5.5   30146   66460
 #&gt; 2            3.70          12.0  549054 1207920
 #&gt; 3           12.20          39.9 1420788 3125735
-#&gt; 4            9.00          30.0 4400000 9700000
+#&gt; 4            9.00          30.0 2943000 1335000
 #&gt;                                                                                                                                         payload_weights
 #&gt; 1                                                                                                                        leo, Low Earth Orbit, 450, 992
 #&gt; 2                                     leo, gto, mars, Low Earth Orbit, Geosynchronous Transfer Orbit, Mars Orbit, 22800, 8300, 4020, 50265, 18300, 8860
 #&gt; 3 leo, gto, mars, pluto, Low Earth Orbit, Geosynchronous Transfer Orbit, Mars Orbit, Pluto Orbit, 63800, 26700, 16800, 3500, 140660, 58860, 37040, 7720
-#&gt; 4                                                                                leo, mars, Low Earth Orbit, Mars Orbit, 150000, 100000, 330000, 220000
+#&gt; 4                                              leo, mars, moon, Low Earth Orbit, Mars Orbit, Moon Orbit, 150000, 100000, 100000, 330000, 220000, 220000
 #&gt;   first_stage.reusable first_stage.engines first_stage.fuel_amount_tons
 #&gt; 1                FALSE                   1                         44.3
 #&gt; 2                 TRUE                   9                        385.0
 #&gt; 3                 TRUE                  27                       1155.0
-#&gt; 4                 TRUE                  31                       6700.0
+#&gt; 4                 TRUE                  37                       3300.0
 #&gt;   first_stage.burn_time_sec first_stage.thrust_sea_level.kN
 #&gt; 1                       169                             420
 #&gt; 2                       162                            7607
@@ -208,12 +214,12 @@ By default all three rocket data are returned.</p></td>
 #&gt; 1                    1                          3.38                        378
 #&gt; 2                    1                         90.00                        397
 #&gt; 3                    1                         90.00                        397
-#&gt; 4                    6                       1100.00                         NA
+#&gt; 4                    6                       1200.00                         NA
 #&gt;   second_stage.thrust.kN second_stage.thrust.lbf second_stage.payloads.option_1
 #&gt; 1                     31                    7000              composite fairing
 #&gt; 2                    934                  210000                         dragon
 #&gt; 3                    934                  210000                         dragon
-#&gt; 4                   1900                  427136                      Spaceship
+#&gt; 4                   1957                  440000                      Spaceship
 #&gt;   second_stage.payloads.composite_fairing.height.meters
 #&gt; 1                                                   3.5
 #&gt; 2                                                  13.1
@@ -238,42 +244,47 @@ By default all three rocket data are returned.</p></td>
 #&gt; 1                           &lt;NA&gt;              1       merlin              1C
 #&gt; 2              composite fairing              9       merlin             1D+
 #&gt; 3              composite fairing             27       merlin             1D+
-#&gt; 4              composite fairing             31       raptor                
-#&gt;   engines.layout engines.engine_loss_max engines.propellant_1
-#&gt; 1         single                       0        liquid oxygen
-#&gt; 2        octaweb                       2        liquid oxygen
-#&gt; 3        octaweb                       6        liquid oxygen
-#&gt; 4           &lt;NA&gt;                      NA        liquid oxygen
-#&gt;   engines.propellant_2 engines.thrust_sea_level.kN engines.thrust_sea_level.lbf
-#&gt; 1        RP-1 kerosene                         420                        94000
-#&gt; 2        RP-1 kerosene                         845                       190000
-#&gt; 3        RP-1 kerosene                         845                       190000
-#&gt; 4       liquid methane                        1700                       382175
+#&gt; 4              composite fairing             37       raptor                
+#&gt;   engines.layout engines.isp.sea_level engines.isp.vacuum
+#&gt; 1         single                   267                304
+#&gt; 2        octaweb                   288                312
+#&gt; 3        octaweb                   288                312
+#&gt; 4           &lt;NA&gt;                   330                380
+#&gt;   engines.engine_loss_max engines.propellant_1 engines.propellant_2
+#&gt; 1                       0        liquid oxygen        RP-1 kerosene
+#&gt; 2                       2        liquid oxygen        RP-1 kerosene
+#&gt; 3                       6        liquid oxygen        RP-1 kerosene
+#&gt; 4                      NA        liquid oxygen       liquid methane
+#&gt;   engines.thrust_sea_level.kN engines.thrust_sea_level.lbf
+#&gt; 1                         420                        94000
+#&gt; 2                         845                       190000
+#&gt; 3                         845                       190000
+#&gt; 4                        1780                       400000
 #&gt;   engines.thrust_vacuum.kN engines.thrust_vacuum.lbf engines.thrust_to_weight
 #&gt; 1                      480                    110000                     96.0
 #&gt; 2                      914                    205500                    180.1
 #&gt; 3                      914                    205500                    180.1
-#&gt; 4                     1900                    427136                       NA
+#&gt; 4                     1960                    440000                    107.0
 #&gt;   landing_legs.number landing_legs.material
 #&gt; 1                   0                  &lt;NA&gt;
 #&gt; 2                   4          carbon fiber
 #&gt; 3                  12          carbon fiber
-#&gt; 4                   4          carbon fiber
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                            flickr_images
-#&gt; 1                                                                                                      https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2009_-_01_liftoff_south_full_wide_ro8a1280_edit.jpg?itok=8loiSGt1, https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2009_-_02_default_liftoff_west_full_wide_nn6p2062_xl.jpg?itok=p776nHsM
-#&gt; 2 https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg, https://farm4.staticflickr.com/3955/32915197674_eee74d81bb_b.jpg, https://farm1.staticflickr.com/293/32312415025_6841e30bf1_b.jpg, https://farm1.staticflickr.com/623/23660653516_5b6cb301d1_b.jpg, https://farm6.staticflickr.com/5518/31579784413_d853331601_b.jpg, https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg
-#&gt; 3                                                                                                                                 https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg, https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg, https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg, https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg
-#&gt; 4                                                                                                                                 https://farm2.staticflickr.com/1861/30934146988_f3de261bb4_b.jpg, https://farm2.staticflickr.com/1854/30934146778_765ea9f486_b.jpg, https://farm2.staticflickr.com/1898/30934147078_31b54027b0_b.jpg, https://farm2.staticflickr.com/1845/43895099105_7329ee6bba_b.jpg
-#&gt;                                    wikipedia
-#&gt; 1     https://en.wikipedia.org/wiki/Falcon_1
-#&gt; 2     https://en.wikipedia.org/wiki/Falcon_9
-#&gt; 3 https://en.wikipedia.org/wiki/Falcon_Heavy
-#&gt; 4 https://en.wikipedia.org/wiki/BFR_(rocket)
-#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 description
-#&gt; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.
-#&gt; 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.
-#&gt; 3                                                                                                                                                                                                                                                                                                                                                                                                                                           With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
-#&gt; 4 BFR is a privately funded next-generation reusable launch vehicle and spacecraft system developed by SpaceX. It was announced by Elon Musk in September 2017; the first spacecraft prototype was being manufactured as of March 2018 and will begin testing in early 2019. The overall space vehicle architecture includes both launch vehicles and spacecraft that are intended to completely replace all of SpaceX's existing space hardware by the early 2020s as well as ground infrastructure for rapid launch and relaunch, and zero-gravity propellant transfer technology to be deployed in low Earth orbit (LEO). The large payload to Earth orbit of up to 150,000 kg (330,000 lb) makes BFR a super heavy-lift launch vehicle.</div><div class='input'>
+#&gt; 4                   6       stainless steel
+#&gt;                                                                                                                                                                                                                                                                                                                                                                                                                flickr_images
+#&gt; 1                                                                                                                          https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2009_-_01_liftoff_south_full_wide_ro8a1280_edit.jpg?itok=8loiSGt1, https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2009_-_02_default_liftoff_west_full_wide_nn6p2062_xl.jpg?itok=p776nHsM
+#&gt; 2                     https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg, https://farm4.staticflickr.com/3955/32915197674_eee74d81bb_b.jpg, https://farm1.staticflickr.com/293/32312415025_6841e30bf1_b.jpg, https://farm1.staticflickr.com/623/23660653516_5b6cb301d1_b.jpg, https://farm6.staticflickr.com/5518/31579784413_d853331601_b.jpg, https://farm1.staticflickr.com/745/32394687645_a9c54a34ef_b.jpg
+#&gt; 3                                                                                                                                                     https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg, https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg, https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg, https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg
+#&gt; 4 https://live.staticflickr.com/65535/48954138962_ee541e6755_b.jpg, https://www.spacex.com/sites/spacex/files/starship_cloud_launch1_moved_morechrome.jpg, https://www.spacex.com/sites/spacex/files/starship_uses.jpg, https://live.staticflickr.com/65535/48953946911_e60c5bcc5c_b.jpg, https://live.staticflickr.com/65535/48954138922_9c42173f08_b.jpg, https://live.staticflickr.com/65535/48953947006_313f01ec93_b.jpg
+#&gt;                                       wikipedia
+#&gt; 1        https://en.wikipedia.org/wiki/Falcon_1
+#&gt; 2        https://en.wikipedia.org/wiki/Falcon_9
+#&gt; 3    https://en.wikipedia.org/wiki/Falcon_Heavy
+#&gt; 4 https://en.wikipedia.org/wiki/SpaceX_Starship
+#&gt;                                                                                                                                                                                                                                                                                                       description
+#&gt; 1                                                                 The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.
+#&gt; 2                                                                                                                                                      Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.
+#&gt; 3                 With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
+#&gt; 4 Starship and Super Heavy Rocket represent a fully reusable transportation system designed to service all Earth orbit needs as well as the Moon and Mars. This two-stage vehicle — composed of the Super Heavy rocket (booster) and Starship (ship) — will eventually replace Falcon 9, Falcon Heavy and Dragon.</div><div class='input'>
 <span class='co'>## get details about "falcon1" rocket</span>
 <span class='fu'>get_SpaceX_rockets</span>(<span class='st'>"falcon1"</span>)</div><div class='output co'>#&gt; $rocketid
 #&gt; [1] 1
@@ -427,6 +438,14 @@ By default all three rocket data are returned.</p></td>
 #&gt; $engines$layout
 #&gt; [1] "single"
 #&gt; 
+#&gt; $engines$isp
+#&gt; $engines$isp$sea_level
+#&gt; [1] 267
+#&gt; 
+#&gt; $engines$isp$vacuum
+#&gt; [1] 304
+#&gt; 
+#&gt; 
 #&gt; $engines$engine_loss_max
 #&gt; [1] 0
 #&gt; 
@@ -476,18 +495,13 @@ By default all three rocket data are returned.</p></td>
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -495,13 +509,16 @@ By default all three rocket data are returned.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

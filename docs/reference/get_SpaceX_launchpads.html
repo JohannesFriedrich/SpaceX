@@ -8,21 +8,29 @@
 
 <title>GET info about SpaceX launchpads — get_SpaceX_launchpads • EcoCounteR</title>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +38,10 @@
 
 
 
-<meta property="og:title" content="GET info about SpaceX launchpads — get_SpaceX_launchpads" />
 
+<meta property="og:title" content="GET info about SpaceX launchpads — get_SpaceX_launchpads" />
 <meta property="og:description" content="GET info about SpaceX launchpads" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -57,9 +65,10 @@
   gtag('config', 'UA-84499524-2');
 </script>
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -93,7 +102,6 @@
   </a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="../news/index.html">
@@ -123,6 +131,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -134,86 +143,86 @@
     </div>
 
     <div class="ref-description">
-    
     <p>GET info about SpaceX launchpads</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>get_SpaceX_launchpads</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>name</th>
-      <td><p><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a>: Name of lauchnpads. Choose "ksc_lc_39a" or NULL.
+      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Name of lauchnpads. Choose "ksc_lc_39a" or NULL.
 By default all three rocket data are returned.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a> with parsed data from SpaceX API.</p>
-    
+    <p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with parsed data from SpaceX API.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## get details about all launchpads</span>
-<span class='fu'>get_SpaceX_launchpads</span>()</div><div class='output co'>#&gt;   padid              id
-#&gt; 1     6     vafb_slc_4e
-#&gt; 2     1 kwajalein_atoll
-#&gt; 3     2    ccafs_slc_40
-#&gt; 4     8            stls
-#&gt; 5     4      ksc_lc_39a
-#&gt; 6     5     vafb_slc_3w
+<span class='fu'>get_SpaceX_launchpads</span>()</div><div class='output co'>#&gt;   padid              id            name
+#&gt; 1     5     vafb_slc_3w     VAFB SLC 3W
+#&gt; 2     2    ccafs_slc_40    CCAFS SLC 40
+#&gt; 3     8            stls            STLS
+#&gt; 4     1 kwajalein_atoll Kwajalein Atoll
+#&gt; 5     6     vafb_slc_4e     VAFB SLC 4E
+#&gt; 6     4      ksc_lc_39a      KSC LC 39A
 #&gt;                                                  full_name             status
-#&gt; 1        Vandenberg Air Force Base Space Launch Complex 4E             active
-#&gt; 2                            Kwajalein Atoll Omelek Island            retired
-#&gt; 3 Cape Canaveral Air Force Station Space Launch Complex 40             active
-#&gt; 4                           SpaceX South Texas Launch Site under construction
-#&gt; 5         Kennedy Space Center Historic Launch Complex 39A             active
-#&gt; 6        Vandenberg Air Force Base Space Launch Complex 3W            retired
+#&gt; 1        Vandenberg Air Force Base Space Launch Complex 3W            retired
+#&gt; 2 Cape Canaveral Air Force Station Space Launch Complex 40             active
+#&gt; 3                           SpaceX South Texas Launch Site under construction
+#&gt; 4                            Kwajalein Atoll Omelek Island            retired
+#&gt; 5        Vandenberg Air Force Base Space Launch Complex 4E             active
+#&gt; 6         Kennedy Space Center Historic Launch Complex 39A             active
 #&gt;               location.name  location.region location.latitude
-#&gt; 1 Vandenberg Air Force Base       California         34.632093
-#&gt; 2             Omelek Island Marshall Islands          9.047721
-#&gt; 3            Cape Canaveral          Florida         28.561857
-#&gt; 4        Boca Chica Village            Texas         25.997264
-#&gt; 5            Cape Canaveral          Florida         28.608058
-#&gt; 6 Vandenberg Air Force Base       California         34.644090
+#&gt; 1 Vandenberg Air Force Base       California         34.644090
+#&gt; 2            Cape Canaveral          Florida         28.561857
+#&gt; 3        Boca Chica Village            Texas         25.997264
+#&gt; 4             Omelek Island Marshall Islands          9.047721
+#&gt; 5 Vandenberg Air Force Base       California         34.632093
+#&gt; 6            Cape Canaveral          Florida         28.608058
 #&gt;   location.longitude      vehicles_launched attempted_launches
-#&gt; 1         -120.61083               Falcon 9                 12
-#&gt; 2          167.74313               Falcon 1                  5
-#&gt; 3          -80.57737               Falcon 9                 38
-#&gt; 4          -97.15608               Falcon 9                  0
-#&gt; 5          -80.60396 Falcon 9, Falcon Heavy                 15
-#&gt; 6         -120.59314               Falcon 1                  0
+#&gt; 1         -120.59314               Falcon 1                  0
+#&gt; 2          -80.57737               Falcon 9                 52
+#&gt; 3          -97.15608               Falcon 9                  0
+#&gt; 4          167.74313               Falcon 1                  5
+#&gt; 5         -120.61083               Falcon 9                 15
+#&gt; 6          -80.60396 Falcon 9, Falcon Heavy                 21
 #&gt;   successful_launches
-#&gt; 1                  12
-#&gt; 2                   2
-#&gt; 3                  36
-#&gt; 4                   0
+#&gt; 1                   0
+#&gt; 2                  50
+#&gt; 3                   0
+#&gt; 4                   2
 #&gt; 5                  15
-#&gt; 6                   0
-#&gt;                                                                                wikipedia
-#&gt; 1                    https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_4
-#&gt; 2                                            https://en.wikipedia.org/wiki/Omelek_Island
-#&gt; 3 https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40
-#&gt; 4                           https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site
-#&gt; 5    https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Pad_39A
-#&gt; 6                    https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_3
+#&gt; 6                  21
+#&gt;                                                                                 wikipedia
+#&gt; 1                     https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_3
+#&gt; 2  https://en.wikipedia.org/wiki/Cape_Canaveral_Air_Force_Station_Space_Launch_Complex_40
+#&gt; 3                            https://en.wikipedia.org/wiki/SpaceX_South_Texas_Launch_Site
+#&gt; 4                                             https://en.wikipedia.org/wiki/Omelek_Island
+#&gt; 5                     https://en.wikipedia.org/wiki/Vandenberg_AFB_Space_Launch_Complex_4
+#&gt; 6 https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Complex_39A
 #&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                    details
-#&gt; 1                                                                                                                                                                                                                                                                                     SpaceX primary west coast launch pad for polar orbits and sun synchronous orbits, primarily used for Iridium. Also intended to be capable of launching Falcon Heavy.
-#&gt; 2                                                                                                                                                                                                                                                                                                      SpaceX original launch site, where all of the Falcon 1 launches occured. Abandoned as SpaceX decided against upgrading the pad to support Falcon 9.
-#&gt; 3                                                                                                                                                                                                                                             SpaceX primary Falcon 9 launch pad, where all east coast Falcon 9s launched prior to the AMOS-6 anomaly. Initially used to launch Titan rockets for Lockheed Martin. Back online since CRS-13 on 2017-12-15.
-#&gt; 4                                                                                                                                                                                                                               SpaceX new launch site currently under construction to help keep up with the Falcon 9 and Heavy manifests. Expected to be completed in late 2018. Initially will be limited to 12 flights per year, and only GTO launches.
-#&gt; 5 NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System.
-#&gt; 6                                                                                                                                                                                                                                                                                                   SpaceX original west coast launch pad for Falcon 1. Performed a static fire but was never used for a launch and abandoned due to scheduling conflicts.</div><div class='input'>
+#&gt; 1                                                                                                                                                                                                                                                                                                   SpaceX original west coast launch pad for Falcon 1. Performed a static fire but was never used for a launch and abandoned due to scheduling conflicts.
+#&gt; 2                                                                                                                                                                                                                                             SpaceX primary Falcon 9 launch pad, where all east coast Falcon 9s launched prior to the AMOS-6 anomaly. Initially used to launch Titan rockets for Lockheed Martin. Back online since CRS-13 on 2017-12-15.
+#&gt; 3                                                                                                                                                                                                                               SpaceX new launch site currently under construction to help keep up with the Falcon 9 and Heavy manifests. Expected to be completed in late 2018. Initially will be limited to 12 flights per year, and only GTO launches.
+#&gt; 4                                                                                                                                                                                                                                                                                                      SpaceX original launch site, where all of the Falcon 1 launches occured. Abandoned as SpaceX decided against upgrading the pad to support Falcon 9.
+#&gt; 5                                                                                                                                                                                                                                                                                     SpaceX primary west coast launch pad for polar orbits and sun synchronous orbits, primarily used for Iridium. Also intended to be capable of launching Falcon Heavy.
+#&gt; 6 NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System.</div><div class='input'>
 <span class='co'>## get details about launchpad "ksc_lc_39a"</span>
 <span class='fu'>get_SpaceX_launchpads</span>(<span class='st'>"ksc_lc_39a"</span>)</div><div class='output co'>#&gt; $padid
 #&gt; [1] 4
 #&gt; 
 #&gt; $id
 #&gt; [1] "ksc_lc_39a"
+#&gt; 
+#&gt; $name
+#&gt; [1] "KSC LC 39A"
 #&gt; 
 #&gt; $full_name
 #&gt; [1] "Kennedy Space Center Historic Launch Complex 39A"
@@ -239,31 +248,26 @@ By default all three rocket data are returned.</p></td>
 #&gt; [1] "Falcon 9"     "Falcon Heavy"
 #&gt; 
 #&gt; $attempted_launches
-#&gt; [1] 15
+#&gt; [1] 21
 #&gt; 
 #&gt; $successful_launches
-#&gt; [1] 15
+#&gt; [1] 21
 #&gt; 
 #&gt; $wikipedia
-#&gt; [1] "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Pad_39A"
+#&gt; [1] "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39#Launch_Complex_39A"
 #&gt; 
 #&gt; $details
 #&gt; [1] "NASA historic launch pad that launched most of the Saturn V and Space Shuttle missions. Initially for Falcon Heavy launches, it is now launching all of SpaceX east coast missions due to the damage from the AMOS-6 anomaly. After SLC-40 repairs are complete, it will be upgraded to support Falcon Heavy, a process which will take about two months. In the future it will launch commercial crew missions and the Interplanetary Transport System."
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -271,13 +275,16 @@ By default all three rocket data are returned.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

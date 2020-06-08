@@ -1,14 +1,29 @@
 #' GET info about SpaceX capsules
 #'
-#' @param name [character]: Name of the capsule. Choose between "dragon1", "dragon2" or "crewdragon".
-#' By default all three rocket data are returned.
+#' @param type [character]: type of the request: Choose between "upcoming" or "past".
+#'
+#' @param ... : Query string to API. See more in details.
+#'
+#' @examples
+#'
+#' # get all capsules
+#' get_SpaceX_capsules()
+#'
+#' # get past capsules
+#' get_SpaceX_capsules("past")
 #'
 #' @return [data.frame] with parsed data from SpaceX API.
 #' @md
 #' @export
-get_SpaceX_capsules <- function(name = NULL) {
+get_SpaceX_capsules <- function(
+  type = NULL,
+  ...) {
 
-  data <- create_SpaceX_request(path = c("capsules", name))
+  query <- list(...)
+
+  if (length(query) == 0) query <- NULL
+
+  data <- create_SpaceX_request(path = c("capsules", type), query = query)
 
   return(data)
 

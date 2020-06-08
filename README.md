@@ -231,13 +231,13 @@ tentative\_max\_precision
 
 <td style="text-align:right;">
 
-73
+96
 
 </td>
 
 <td style="text-align:left;">
 
-GPS IIIA-1
+Starlink-8 & SkySat 16-18
 
 </td>
 
@@ -249,25 +249,25 @@ character(0)
 
 <td style="text-align:left;">
 
-2018
+2020
 
 </td>
 
 <td style="text-align:right;">
 
-1545142200
+1592010000
 
 </td>
 
 <td style="text-align:left;">
 
-2018-12-18T14:10:00.000Z
+2020-06-13T01:00:00.000Z
 
 </td>
 
 <td style="text-align:left;">
 
-2018-12-18T09:10:00-05:00
+2020-06-12T21:00:00-04:00
 
 </td>
 
@@ -289,43 +289,101 @@ hour
 
 <td style="text-align:right;">
 
-74
+97
 
 </td>
 
 <td style="text-align:left;">
 
-Iridium NEXT Mission 8
+Starlink-9
 
 </td>
 
 <td style="text-align:left;">
 
-F3364BF
+character(0)
 
 </td>
 
 <td style="text-align:left;">
 
-2019
+2020
 
 </td>
 
 <td style="text-align:right;">
 
-1546876380
+1590969600
 
 </td>
 
 <td style="text-align:left;">
 
-2019-01-07T15:53:00.000Z
+2020-06-01T00:00:00.000Z
 
 </td>
 
 <td style="text-align:left;">
 
-2019-01-07T07:53:00-08:00
+2020-05-31T20:00:00-04:00
+
+</td>
+
+<td style="text-align:left;">
+
+TRUE
+
+</td>
+
+<td style="text-align:left;">
+
+month
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+98
+
+</td>
+
+<td style="text-align:left;">
+
+GPS III SV03 (Columbus)
+
+</td>
+
+<td style="text-align:left;">
+
+character(0)
+
+</td>
+
+<td style="text-align:left;">
+
+2020
+
+</td>
+
+<td style="text-align:right;">
+
+1593546900
+
+</td>
+
+<td style="text-align:left;">
+
+2020-06-30T19:55:00.000Z
+
+</td>
+
+<td style="text-align:left;">
+
+2020-06-30T15:55:00-04:00
 
 </td>
 
@@ -338,934 +396,6 @@ FALSE
 <td style="text-align:left;">
 
 hour
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-75
-
-</td>
-
-<td style="text-align:left;">
-
-CCtCap Demo Mission 1
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1547683200
-
-</td>
-
-<td style="text-align:left;">
-
-2019-01-17T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-01-16T19:00:00-05:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-day
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-76
-
-</td>
-
-<td style="text-align:left;">
-
-PSN-6 / GTO-1 / SpaceIL Moon Lander
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1550016000
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-13T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-12T19:00:00-05:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-day
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-77
-
-</td>
-
-<td style="text-align:left;">
-
-ArabSat 6A
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1548979200
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-01-31T19:00:00-05:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-78
-
-</td>
-
-<td style="text-align:left;">
-
-CRS-17
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1550361600
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-17T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-16T19:00:00-05:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-day
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-79
-
-</td>
-
-<td style="text-align:left;">
-
-RADARSAT C-1, C-2, C-3
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1550448000
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-18T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-17T16:00:00-08:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-day
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-80
-
-</td>
-
-<td style="text-align:left;">
-
-STP-2
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1551398400
-
-</td>
-
-<td style="text-align:left;">
-
-2019-03-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-02-28T19:00:00-05:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-81
-
-</td>
-
-<td style="text-align:left;">
-
-SARah 1
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1546300800
-
-</td>
-
-<td style="text-align:left;">
-
-2019-01-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2018-12-31T16:00:00-08:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-quarter
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-82
-
-</td>
-
-<td style="text-align:left;">
-
-CRS-18
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1557187200
-
-</td>
-
-<td style="text-align:left;">
-
-2019-05-07T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-05-06T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-day
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-83
-
-</td>
-
-<td style="text-align:left;">
-
-Crew Dragon In Flight Abort Test
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1556668800
-
-</td>
-
-<td style="text-align:left;">
-
-2019-05-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-04-30T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-84
-
-</td>
-
-<td style="text-align:left;">
-
-CCtCap Demo Mission 2
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1559347200
-
-</td>
-
-<td style="text-align:left;">
-
-2019-06-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-05-31T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-85
-
-</td>
-
-<td style="text-align:left;">
-
-Amos-17
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1554076800
-
-</td>
-
-<td style="text-align:left;">
-
-2019-04-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-03-31T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-quarter
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-86
-
-</td>
-
-<td style="text-align:left;">
-
-GiSAT-1
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1546300800
-
-</td>
-
-<td style="text-align:left;">
-
-2019-01-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2018-12-31T19:00:00-05:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-half
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-86
-
-</td>
-
-<td style="text-align:left;">
-
-USCV-1 (NASA Crew Flight 1)
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1564617600
-
-</td>
-
-<td style="text-align:left;">
-
-2019-08-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-07-31T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-87
-
-</td>
-
-<td style="text-align:left;">
-
-SAOCOM 1B
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1567296000
-
-</td>
-
-<td style="text-align:left;">
-
-2019-09-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-08-31T17:00:00-07:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-88
-
-</td>
-
-<td style="text-align:left;">
-
-CRS-19
-
-</td>
-
-<td style="text-align:left;">
-
-EE86F74
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1571097600
-
-</td>
-
-<td style="text-align:left;">
-
-2019-10-15T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-10-14T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-day
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-89
-
-</td>
-
-<td style="text-align:left;">
-
-GPS IIIA-3
-
-</td>
-
-<td style="text-align:left;">
-
-character(0)
-
-</td>
-
-<td style="text-align:left;">
-
-2019
-
-</td>
-
-<td style="text-align:right;">
-
-1569888000
-
-</td>
-
-<td style="text-align:left;">
-
-2019-10-01T00:00:00.000Z
-
-</td>
-
-<td style="text-align:left;">
-
-2019-09-30T20:00:00-04:00
-
-</td>
-
-<td style="text-align:left;">
-
-TRUE
-
-</td>
-
-<td style="text-align:left;">
-
-month
 
 </td>
 
@@ -1284,7 +414,9 @@ ggplot() +
   facet_grid(rocket$rocket_name~launch_success, scales = "free_x") +
   theme(legend.position = "bottom") + 
   scale_fill_discrete(name = "Launch Site") +
-  labs(x = "Year", y = "Counts")
+  labs(x = "Year", y = "Counts") +
+  theme(legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 <img src="README_figs/README-past_launches-1.png" width="672" style="display: block; margin: auto;" />
@@ -1546,13 +678,13 @@ TRUE
 
 <td style="text-align:left;">
 
-bfr
+starship
 
 </td>
 
 <td style="text-align:left;">
 
-Big Falcon Rocket
+Starship
 
 </td>
 
@@ -1597,6 +729,34 @@ FALSE
 </tbody>
 
 </table>
+
+## Stats 2020
+
+``` r
+stats_2020 <- get_SpaceX_launches(launch_year = 2020)
+
+payload <- stats_2020$rocket$second_stage$payloads %>% 
+  lapply(function(x){
+  x %>%   
+    select(payload_id, payload_type, payload_mass_kg)
+  
+}) %>% 
+  bind_rows()
+```
+
+``` r
+payload
+##                         payload_id payload_type payload_mass_kg
+## 1                       Starlink 2    Satellite           15400
+## 2 Crew Dragon In Flight Abort Test  Crew Dragon              NA
+## 3                       Starlink 3    Satellite           15600
+## 4                       Starlink 4    Satellite           15400
+## 5                           CRS-20   Dragon 1.1            1977
+## 6                       Starlink 5    Satellite           15600
+## 7                       Starlink 6    Satellite           15400
+## 8            CCtCap Demo Mission 2  Crew Dragon            9525
+## 9                       Starlink 7    Satellite           15400
+```
 
 ## Related projects
 

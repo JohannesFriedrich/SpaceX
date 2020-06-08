@@ -6,12 +6,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get SpaceX Data • EcoCounteR</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Get SpaceX Data">
 <meta property="og:description" content="An R API wrapper for the SpaceX API.">
-<meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -23,7 +24,7 @@
   gtag('config', 'UA-84499524-2');
 </script>
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-home">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -87,9 +88,9 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="spacex---an-r-api-wrapper-for-the-spacex-project" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#spacex---an-r-api-wrapper-for-the-spacex-project" class="anchor"></a>SpaceX - An R API wrapper for the SpaceX project</h1></div>
@@ -98,19 +99,19 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Until now the package is not on CRAN but you can download it via GitHub with the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span> (<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">require</a></span>(<span class="st">"devtools"</span>))</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"devtools"</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"JohannesFriedrich/SpaceX"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="kw">if</span> (!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st">"devtools"</span>))
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"JohannesFriedrich/SpaceX"</span>)</pre></div>
 </div>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
 <p>The <strong>R</strong>-package <em>SpaceX</em> is an API wrapper for data collected by <a href="https://api.spacexdata.com/v2/" class="uri">https://api.spacexdata.com/v2/</a>. You can request available data with different functions:</p>
-<table class="table table">
+<table class="table">
 <colgroup>
-<col width="25%">
-<col width="65%">
-<col width="8%">
+<col width="24%">
+<col width="43%">
+<col width="32%">
 </colgroup>
 <thead><tr class="header">
 <th>Function name</th>
@@ -156,223 +157,374 @@
 <a href="#request-basic-information-from-spacex-api" class="anchor"></a>Request basic information from SpaceX API <a id="basic_information"></a>
 </h2>
 <p>First we load some needed packages. The function <code><a href="reference/get_SpaceX_info.html">get_SpaceX_info()</a></code> will deliver some information about the company.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(SpaceX)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(dplyr)</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">info &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_SpaceX_info.html">get_SpaceX_info</a></span>()</a></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">info</a></code></pre></div>
-<table class="table table">
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">SpaceX</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
+
+<span class="no">info</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_info.html">get_SpaceX_info</a></span>()</pre></div>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="no">info</span></pre></div>
+<table class="table">
 <thead><tr>
 <th style="text-align:left;">
-name
+<p>name</p>
 </th>
 <th style="text-align:left;">
-founder
+<p>founder</p>
 </th>
 <th style="text-align:right;">
-founded
+<p>founded</p>
 </th>
 <th style="text-align:right;">
-employees
+<p>employees</p>
 </th>
 <th style="text-align:right;">
-vehicles
+<p>vehicles</p>
 </th>
 <th style="text-align:right;">
-launch_sites
+<p>launch_sites</p>
 </th>
 <th style="text-align:right;">
-test_sites
+<p>test_sites</p>
 </th>
 </tr></thead>
 <tbody><tr>
 <td style="text-align:left;">
-SpaceX
+<p>SpaceX</p>
 </td>
 <td style="text-align:left;">
-Elon Musk
+<p>Elon Musk</p>
 </td>
 <td style="text-align:right;">
-2002
+<p>2002</p>
 </td>
 <td style="text-align:right;">
-7000
+<p>7000</p>
 </td>
 <td style="text-align:right;">
-3
+<p>3</p>
 </td>
 <td style="text-align:right;">
-3
+<p>3</p>
 </td>
 <td style="text-align:right;">
-1
+<p>1</p>
 </td>
 </tr></tbody>
 </table>
 </div>
-<div id="play-around-with-data" class="section level2">
+<div id="request-upcoming-starts" class="section level2">
 <h2 class="hasAnchor">
-<a href="#play-around-with-data" class="anchor"></a>Play around with data</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(launch_year, <span class="dt">fill =</span> launch_site<span class="op">$</span>site_name)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(rocket<span class="op">$</span>rocket_name<span class="op">~</span>launch_success, <span class="dt">scales =</span> <span class="st">"free_x"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="dt">legend.position =</span> <span class="st">"bottom"</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/scale_hue.html">scale_fill_discrete</a></span>(<span class="dt">name =</span> <span class="st">"Launch Site"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="st">"Year"</span>, <span class="dt">y =</span> <span class="st">"Counts"</span>)</a></code></pre></div>
-<p><img src="README_figs/README-past_launches-1.png" width="700" style="display: block; margin: auto;"></p>
-<p>Now we request some data about the used rockets. This can be done with the function <code><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets()</a></code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">rockets &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets</a></span>()</a></code></pre></div>
-<table class="table table">
+<a href="#request-upcoming-starts" class="anchor"></a>Request upcoming starts</h2>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="no">upcoming</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>(<span class="st">"upcoming"</span>)</pre></div>
+<table class="table">
 <thead><tr>
 <th style="text-align:right;">
-rocketid
+<p>flight_number</p>
 </th>
 <th style="text-align:left;">
-id
+<p>mission_name</p>
 </th>
 <th style="text-align:left;">
-name
+<p>mission_id</p>
 </th>
 <th style="text-align:left;">
-type
+<p>launch_year</p>
+</th>
+<th style="text-align:right;">
+<p>launch_date_unix</p>
 </th>
 <th style="text-align:left;">
-active
+<p>launch_date_utc</p>
 </th>
-<th style="text-align:right;">
-stages
+<th style="text-align:left;">
+<p>launch_date_local</p>
 </th>
-<th style="text-align:right;">
-boosters
+<th style="text-align:left;">
+<p>is_tentative</p>
 </th>
-<th style="text-align:right;">
-cost_per_launch
-</th>
-<th style="text-align:right;">
-success_rate_pct
+<th style="text-align:left;">
+<p>tentative_max_precision</p>
 </th>
 </tr></thead>
 <tbody>
 <tr>
 <td style="text-align:right;">
-1
+<p>96</p>
 </td>
 <td style="text-align:left;">
-falcon1
+<p>Starlink-8 &amp; SkySat 16-18</p>
 </td>
 <td style="text-align:left;">
-Falcon 1
+<p>character(0)</p>
 </td>
 <td style="text-align:left;">
-rocket
+<p>2020</p>
+</td>
+<td style="text-align:right;">
+<p>1592010000</p>
 </td>
 <td style="text-align:left;">
-FALSE
+<p>2020-06-13T01:00:00.000Z</p>
 </td>
-<td style="text-align:right;">
-2
+<td style="text-align:left;">
+<p>2020-06-12T21:00:00-04:00</p>
 </td>
-<td style="text-align:right;">
-0
+<td style="text-align:left;">
+<p>FALSE</p>
 </td>
-<td style="text-align:right;">
-6.7e+06
-</td>
-<td style="text-align:right;">
-40
+<td style="text-align:left;">
+<p>hour</p>
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-2
+<p>97</p>
 </td>
 <td style="text-align:left;">
-falcon9
+<p>Starlink-9</p>
 </td>
 <td style="text-align:left;">
-Falcon 9
+<p>character(0)</p>
 </td>
 <td style="text-align:left;">
-rocket
+<p>2020</p>
+</td>
+<td style="text-align:right;">
+<p>1590969600</p>
 </td>
 <td style="text-align:left;">
-TRUE
+<p>2020-06-01T00:00:00.000Z</p>
 </td>
-<td style="text-align:right;">
-2
+<td style="text-align:left;">
+<p>2020-05-31T20:00:00-04:00</p>
 </td>
-<td style="text-align:right;">
-0
+<td style="text-align:left;">
+<p>TRUE</p>
 </td>
-<td style="text-align:right;">
-5.0e+07
-</td>
-<td style="text-align:right;">
-97
+<td style="text-align:left;">
+<p>month</p>
 </td>
 </tr>
 <tr>
 <td style="text-align:right;">
-3
+<p>98</p>
 </td>
 <td style="text-align:left;">
-falconheavy
+<p>GPS III SV03 (Columbus)</p>
 </td>
 <td style="text-align:left;">
-Falcon Heavy
+<p>character(0)</p>
 </td>
 <td style="text-align:left;">
-rocket
+<p>2020</p>
+</td>
+<td style="text-align:right;">
+<p>1593546900</p>
 </td>
 <td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-9.0e+07
-</td>
-<td style="text-align:right;">
-100
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-4
+<p>2020-06-30T19:55:00.000Z</p>
 </td>
 <td style="text-align:left;">
-bfr
+<p>2020-06-30T15:55:00-04:00</p>
 </td>
 <td style="text-align:left;">
-Big Falcon Rocket
+<p>FALSE</p>
 </td>
 <td style="text-align:left;">
-rocket
-</td>
-<td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-7.0e+06
-</td>
-<td style="text-align:right;">
-0
+<p>hour</p>
 </td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="play-around-with-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#play-around-with-data" class="anchor"></a>Play around with data</h2>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>() <span class="kw">%&gt;%</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>() +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>(<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">launch_year</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">launch_site</span>$<span class="no">site_name</span>)) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span>(<span class="no">rocket</span>$<span class="no">rocket_name</span>~<span class="no">launch_success</span>, <span class="kw">scales</span> <span class="kw">=</span> <span class="st">"free_x"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"bottom"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_hue.html">scale_fill_discrete</a></span>(<span class="kw">name</span> <span class="kw">=</span> <span class="st">"Launch Site"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="st">"Year"</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="st">"Counts"</span>) +
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span>(<span class="kw">legend.position</span> <span class="kw">=</span> <span class="st">"bottom"</span>,
+        <span class="kw">axis.text.x</span> <span class="kw">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span>(<span class="kw">angle</span> <span class="kw">=</span> <span class="fl">45</span>, <span class="kw">hjust</span> <span class="kw">=</span> <span class="fl">1</span>))</pre></div>
+<p><img src="README_figs/README-past_launches-1.png" width="672" style="display: block; margin: auto;"></p>
+<p>Now we request some data about the used rockets. This can be done with the function <code><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets()</a></code>.</p>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="no">rockets</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_rockets.html">get_SpaceX_rockets</a></span>()</pre></div>
+<table class="table">
+<thead><tr>
+<th style="text-align:right;">
+<p>rocketid</p>
+</th>
+<th style="text-align:left;">
+<p>id</p>
+</th>
+<th style="text-align:left;">
+<p>name</p>
+</th>
+<th style="text-align:left;">
+<p>type</p>
+</th>
+<th style="text-align:left;">
+<p>active</p>
+</th>
+<th style="text-align:right;">
+<p>stages</p>
+</th>
+<th style="text-align:right;">
+<p>boosters</p>
+</th>
+<th style="text-align:right;">
+<p>cost_per_launch</p>
+</th>
+<th style="text-align:right;">
+<p>success_rate_pct</p>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+<p>1</p>
+</td>
+<td style="text-align:left;">
+<p>falcon1</p>
+</td>
+<td style="text-align:left;">
+<p>Falcon 1</p>
+</td>
+<td style="text-align:left;">
+<p>rocket</p>
+</td>
+<td style="text-align:left;">
+<p>FALSE</p>
+</td>
+<td style="text-align:right;">
+<p>2</p>
+</td>
+<td style="text-align:right;">
+<p>0</p>
+</td>
+<td style="text-align:right;">
+<p>6.7e+06</p>
+</td>
+<td style="text-align:right;">
+<p>40</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>2</p>
+</td>
+<td style="text-align:left;">
+<p>falcon9</p>
+</td>
+<td style="text-align:left;">
+<p>Falcon 9</p>
+</td>
+<td style="text-align:left;">
+<p>rocket</p>
+</td>
+<td style="text-align:left;">
+<p>TRUE</p>
+</td>
+<td style="text-align:right;">
+<p>2</p>
+</td>
+<td style="text-align:right;">
+<p>0</p>
+</td>
+<td style="text-align:right;">
+<p>5.0e+07</p>
+</td>
+<td style="text-align:right;">
+<p>97</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>3</p>
+</td>
+<td style="text-align:left;">
+<p>falconheavy</p>
+</td>
+<td style="text-align:left;">
+<p>Falcon Heavy</p>
+</td>
+<td style="text-align:left;">
+<p>rocket</p>
+</td>
+<td style="text-align:left;">
+<p>TRUE</p>
+</td>
+<td style="text-align:right;">
+<p>2</p>
+</td>
+<td style="text-align:right;">
+<p>2</p>
+</td>
+<td style="text-align:right;">
+<p>9.0e+07</p>
+</td>
+<td style="text-align:right;">
+<p>100</p>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+<p>4</p>
+</td>
+<td style="text-align:left;">
+<p>starship</p>
+</td>
+<td style="text-align:left;">
+<p>Starship</p>
+</td>
+<td style="text-align:left;">
+<p>rocket</p>
+</td>
+<td style="text-align:left;">
+<p>FALSE</p>
+</td>
+<td style="text-align:right;">
+<p>2</p>
+</td>
+<td style="text-align:right;">
+<p>0</p>
+</td>
+<td style="text-align:right;">
+<p>7.0e+06</p>
+</td>
+<td style="text-align:right;">
+<p>0</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="stats-2020" class="section level2">
+<h2 class="hasAnchor">
+<a href="#stats-2020" class="anchor"></a>Stats 2020</h2>
+<div class="sourceCode" id="cb7"><pre class="r"><span class="no">stats_2020</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/get_SpaceX_launches.html">get_SpaceX_launches</a></span>(<span class="kw">launch_year</span> <span class="kw">=</span> <span class="fl">2020</span>)
+
+<span class="no">payload</span> <span class="kw">&lt;-</span> <span class="no">stats_2020</span>$<span class="no">rocket</span>$<span class="no">second_stage</span>$<span class="no">payloads</span> <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span>(<span class="kw">function</span>(<span class="no">x</span>){
+  <span class="no">x</span> <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">payload_id</span>, <span class="no">payload_type</span>, <span class="no">payload_mass_kg</span>)
+
+}) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>()</pre></div>
+<div class="sourceCode" id="cb8"><pre class="r"><span class="no">payload</span>
+<span class="co">##                         payload_id payload_type payload_mass_kg</span>
+<span class="co">## 1                       Starlink 2    Satellite           15400</span>
+<span class="co">## 2 Crew Dragon In Flight Abort Test  Crew Dragon              NA</span>
+<span class="co">## 3                       Starlink 3    Satellite           15600</span>
+<span class="co">## 4                       Starlink 4    Satellite           15400</span>
+<span class="co">## 5                           CRS-20   Dragon 1.1            1977</span>
+<span class="co">## 6                       Starlink 5    Satellite           15600</span>
+<span class="co">## 7                       Starlink 6    Satellite           15400</span>
+<span class="co">## 8            CCtCap Demo Mission 2  Crew Dragon            9525</span>
+<span class="co">## 9                       Starlink 7    Satellite           15400</span></pre></div>
 </div>
 <div id="related-projects" class="section level2">
 <h2 class="hasAnchor">
@@ -385,11 +537,11 @@ FALSE
 </div>
   </div>
 
-  <div class="col-md-3" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/JohannesFriedrich/SpaceX">https://​github.com/​JohannesFriedrich/​SpaceX</a>
+<li>Browse source code at <br><a href="https://github.com/JohannesFriedrich/SpaceX/">https://​github.com/​JohannesFriedrich/​SpaceX/​</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/JohannesFriedrich/SpaceX/issues">https://​github.com/​JohannesFriedrich/​SpaceX/​issues</a>
 </li>
@@ -423,12 +575,14 @@ FALSE
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
