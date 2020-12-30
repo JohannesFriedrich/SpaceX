@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GET detailed info about SpaceX parts — get_SpaceX_parts • EcoCounteR</title>
+<title>GET info about SpaceX cores — get_SpaceX_cores • EcoCounteR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="GET detailed info about SpaceX parts — get_SpaceX_parts" />
-<meta property="og:description" content="GET detailed info about SpaceX parts" />
+<meta property="og:title" content="GET info about SpaceX cores — get_SpaceX_cores" />
+<meta property="og:description" content="GET info about SpaceX cores" />
 
 
 
@@ -137,28 +137,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>GET detailed info about SpaceX parts</h1>
-    <small class="dont-index">Source: <a href='https://github.com/JohannesFriedrich/SpaceX/blob/master/R/get_SpaceX_parts.R'><code>R/get_SpaceX_parts.R</code></a></small>
-    <div class="hidden name"><code>get_SpaceX_parts.Rd</code></div>
+    <h1>GET info about SpaceX cores</h1>
+    <small class="dont-index">Source: <a href='https://github.com/JohannesFriedrich/SpaceX/blob/master/R/get_SpaceX_cores.R'><code>R/get_SpaceX_cores.R</code></a></small>
+    <div class="hidden name"><code>get_SpaceX_cores.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>GET detailed info about SpaceX parts</p>
+    <p>GET info about SpaceX cores</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_SpaceX_parts</span>(<span class='no'>type</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>get_SpaceX_cores</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>type</th>
-      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Type of parts. Choose between "caps" for capsule details
-or "cores" for core details.</p></td>
-    </tr>
-    <tr>
-      <th>name</th>
-      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: Name of capsule or core.</p></td>
+      <td><p><a href='https://rdrr.io/r/base/character.html'>character</a>: type of the request: Choose between "upcoming" or "past".</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -169,38 +164,11 @@ or "cores" for core details.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with parsed data from SpaceX API.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Query Strings for <code>type = "caps"</code></p><table class='table'>
-<tr><td>Query Strings</td><td>Description</td></tr>
-<tr><td>capsule_serial</td><td>Filter by capsule serial #</td></tr>
-<tr><td>capsule_id</td><td>Filter by capsule id</td></tr>
-<tr><td>status</td><td>Filter by capsule status</td></tr>
-<tr><td>original_launch</td><td>Filter by original launch date</td></tr>
-<tr><td>missions</td><td>Filter by flight missions</td></tr>
-<tr><td>landings</td><td>Filter by # of landings</td></tr>
-<tr><td>type</td><td>Filter by type of dragon capusle</td></tr>
-</table>
-
-
-<p>Query Strings for <code>type = "cores"</code></p><table class='table'>
-<tr><td>core_serial</td><td>Filter by core serial #</td></tr>
-<tr><td>status</td><td>Filter by flight status</td></tr>
-<tr><td>original_launch</td><td>Filter by original launch date</td></tr>
-<tr><td>missions</td><td>Filter by flight missions</td></tr>
-<tr><td>rtls_attempt</td><td>Filter by at least 1 rtls attempt</td></tr>
-<tr><td>rtls_landings</td><td>Filter by total number of landings</td></tr>
-<tr><td>asds_attempt</td><td>Filter by at least 1 asds attempt</td></tr>
-<tr><td>asds_landings</td><td>Filter by total number of landings</td></tr>
-<tr><td>water_landing</td><td>Filter by at least 1 water landing</td></tr>
-</table>
-
-
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'>## get details about all cores</span>
-<span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"cores"</span>)</div><div class='output co'>#&gt;    core_serial block   status          original_launch original_launch_unix
+<span class='co'># get all cores</span>
+<span class='fu'>get_SpaceX_cores</span>()</div><div class='output co'>#&gt;    core_serial block   status          original_launch original_launch_unix
 #&gt; 1     Merlin1A    NA     lost 2006-03-24T22:30:00.000Z           1143239400
 #&gt; 2     Merlin2A    NA     lost 2007-03-21T01:10:00.000Z           1174439400
 #&gt; 3     Merlin1C    NA     lost 2008-08-02T03:34:00.000Z           1217648040
@@ -530,215 +498,14 @@ or "cores" for core details.</p></td>
 #&gt; 63                                                                                                                                     Exploded upon ocean impact a safe distance from OCISLY
 #&gt; 64                                                                                                                                                         Landed at LZ-1 as of Mar 7, 2020. 
 #&gt; 65                                                                                                                                                       Landed on OCISLY as of May 30, 2020 </div><div class='input'>
-<span class='co'>## get details about all capsules</span>
-<span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"caps"</span>)</div><div class='output co'>#&gt;    capsule_serial capsule_id    status          original_launch
-#&gt; 1            C202    dragon2    active                     &lt;NA&gt;
-#&gt; 2            C203    dragon2    active                     &lt;NA&gt;
-#&gt; 3            C204    dragon2    active                     &lt;NA&gt;
-#&gt; 4            C101    dragon1   retired 2010-12-08T15:43:00.000Z
-#&gt; 5            C102    dragon1   retired 2012-05-22T07:44:00.000Z
-#&gt; 6            C103    dragon1   unknown 2012-10-08T00:35:00.000Z
-#&gt; 7            C104    dragon1   unknown 2013-03-01T19:10:00.000Z
-#&gt; 8            C105    dragon1   unknown 2014-04-18T19:25:00.000Z
-#&gt; 9            C106    dragon1    active 2014-09-21T05:52:00.000Z
-#&gt; 10           C107    dragon1   unknown 2015-01-10T09:47:00.000Z
-#&gt; 11           C108    dragon1    active 2015-04-14T20:10:00.000Z
-#&gt; 12           C109    dragon1 destroyed 2015-06-28T14:21:00.000Z
-#&gt; 13           C110    dragon1    active 2016-04-08T20:43:00.000Z
-#&gt; 14           C111    dragon1    active 2016-07-18T04:45:00.000Z
-#&gt; 15           C112    dragon1    active 2017-02-19T14:39:00.000Z
-#&gt; 16           C113    dragon1    active 2017-08-14T16:31:00.000Z
-#&gt; 17           C201    dragon2    active 2019-03-02T07:45:00.000Z
-#&gt; 18           C205    dragon2    active 2020-01-19T14:00:00.000Z
-#&gt; 19           C206    dragon2    active 2020-05-30T19:22:00.000Z
-#&gt;    original_launch_unix                             missions landings
-#&gt; 1                    NA                                 NULL        0
-#&gt; 2                    NA                                 NULL        0
-#&gt; 3                    NA                                 NULL        0
-#&gt; 4            1291822980                            COTS 1, 7        0
-#&gt; 5            1335944640                            COTS 2, 8        1
-#&gt; 6            1349656500                             CRS-1, 9        1
-#&gt; 7            1362165000                            CRS-2, 10        1
-#&gt; 8            1397849100                            CRS-3, 14        1
-#&gt; 9            1411278720    CRS-4, CRS-11, CRS-19, 18, 41, 85        3
-#&gt; 10           1420883220                            CRS-5, 19        1
-#&gt; 11           1429042200    CRS-6, CRS-13, CRS-18, 22, 51, 82        3
-#&gt; 12           1435501260                            CRS-7, 24        0
-#&gt; 13           1460148180                CRS-8, CRS-14, 28, 59        2
-#&gt; 14           1468817100                CRS-9, CRS-15, 32, 64        2
-#&gt; 15           1487515140   CRS-10, CRS-16, CRS-20, 36, 72, 91        3
-#&gt; 16           1502728260               CRS-12, CRS-17, 45, 78        2
-#&gt; 17           1551512700            CCtCap Demo Mission 1, 76        1
-#&gt; 18           1579442400 Crew Dragon In Flight Abort Test, 88        1
-#&gt; 19           1590866520            CCtCap Demo Mission 2, 94        1
-#&gt;          type
-#&gt; 1  Dragon 2.0
-#&gt; 2  Dragon 2.0
-#&gt; 3  Dragon 2.0
-#&gt; 4  Dragon 1.0
-#&gt; 5  Dragon 1.0
-#&gt; 6  Dragon 1.0
-#&gt; 7  Dragon 1.0
-#&gt; 8  Dragon 1.1
-#&gt; 9  Dragon 1.1
-#&gt; 10 Dragon 1.1
-#&gt; 11 Dragon 1.1
-#&gt; 12 Dragon 1.1
-#&gt; 13 Dragon 1.1
-#&gt; 14 Dragon 1.1
-#&gt; 15 Dragon 1.1
-#&gt; 16 Dragon 1.1
-#&gt; 17 Dragon 2.0
-#&gt; 18 Dragon 2.0
-#&gt; 19 Dragon 2.0
-#&gt;                                                                                                  details
-#&gt; 1                     Capsule used to qualify Dragon 2's environmental control and life support systems.
-#&gt; 2                                                  Rumored to be used for Inflight Abort Test after DM-1
-#&gt; 3                                                              Currently in construction for use in DM-2
-#&gt; 4                                                                   Reentered after three weeks in orbit
-#&gt; 5                                                                                First Dragon spacecraft
-#&gt; 6                                                 First of twenty missions flown under the CRS1 contract
-#&gt; 7                                                                                                   &lt;NA&gt;
-#&gt; 8                                                                              First Dragon v1.1 capsule
-#&gt; 9                                                                      First Dragon capsule to be reused
-#&gt; 10                                                                                                  &lt;NA&gt;
-#&gt; 11                                                                    Second Dragon capsule to be reused
-#&gt; 12                                                           Destroyed on impact after F9 launch failure
-#&gt; 13                                                                                                  &lt;NA&gt;
-#&gt; 14                                                                                                  &lt;NA&gt;
-#&gt; 15                                                                                                  &lt;NA&gt;
-#&gt; 16                                                                  The last newly manufactured Dragon 1
-#&gt; 17                                                 Destroyed in a test anomaly at LZ-1 on April 20, 2019
-#&gt; 18                        In construction for use in first mission in contract under the CCtCap contract
-#&gt; 19 In Hawthorne, CA as of October 11, 2019. Seen in background during Musk/Bridenstine press conference.
-#&gt;    reuse_count
-#&gt; 1            0
-#&gt; 2            0
-#&gt; 3            0
-#&gt; 4            0
-#&gt; 5            0
-#&gt; 6            0
-#&gt; 7            0
-#&gt; 8            0
-#&gt; 9            2
-#&gt; 10           0
-#&gt; 11           2
-#&gt; 12           0
-#&gt; 13           1
-#&gt; 14           1
-#&gt; 15           2
-#&gt; 16           1
-#&gt; 17           0
-#&gt; 18           0
-#&gt; 19           0</div><div class='input'>
-<span class='co'>## get details about all active capsules</span>
-<span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"caps"</span>, <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"active"</span>)</div><div class='output co'>#&gt;    capsule_serial capsule_id status          original_launch
-#&gt; 1            C202    dragon2 active                     &lt;NA&gt;
-#&gt; 2            C203    dragon2 active                     &lt;NA&gt;
-#&gt; 3            C204    dragon2 active                     &lt;NA&gt;
-#&gt; 4            C106    dragon1 active 2014-09-21T05:52:00.000Z
-#&gt; 5            C108    dragon1 active 2015-04-14T20:10:00.000Z
-#&gt; 6            C110    dragon1 active 2016-04-08T20:43:00.000Z
-#&gt; 7            C111    dragon1 active 2016-07-18T04:45:00.000Z
-#&gt; 8            C112    dragon1 active 2017-02-19T14:39:00.000Z
-#&gt; 9            C113    dragon1 active 2017-08-14T16:31:00.000Z
-#&gt; 10           C201    dragon2 active 2019-03-02T07:45:00.000Z
-#&gt; 11           C205    dragon2 active 2020-01-19T14:00:00.000Z
-#&gt; 12           C206    dragon2 active 2020-05-30T19:22:00.000Z
-#&gt;    original_launch_unix                             missions landings
-#&gt; 1                    NA                                 NULL        0
-#&gt; 2                    NA                                 NULL        0
-#&gt; 3                    NA                                 NULL        0
-#&gt; 4            1411278720    CRS-4, CRS-11, CRS-19, 18, 41, 85        3
-#&gt; 5            1429042200    CRS-6, CRS-13, CRS-18, 22, 51, 82        3
-#&gt; 6            1460148180                CRS-8, CRS-14, 28, 59        2
-#&gt; 7            1468817100                CRS-9, CRS-15, 32, 64        2
-#&gt; 8            1487515140   CRS-10, CRS-16, CRS-20, 36, 72, 91        3
-#&gt; 9            1502728260               CRS-12, CRS-17, 45, 78        2
-#&gt; 10           1551512700            CCtCap Demo Mission 1, 76        1
-#&gt; 11           1579442400 Crew Dragon In Flight Abort Test, 88        1
-#&gt; 12           1590866520            CCtCap Demo Mission 2, 94        1
-#&gt;          type
-#&gt; 1  Dragon 2.0
-#&gt; 2  Dragon 2.0
-#&gt; 3  Dragon 2.0
-#&gt; 4  Dragon 1.1
-#&gt; 5  Dragon 1.1
-#&gt; 6  Dragon 1.1
-#&gt; 7  Dragon 1.1
-#&gt; 8  Dragon 1.1
-#&gt; 9  Dragon 1.1
-#&gt; 10 Dragon 2.0
-#&gt; 11 Dragon 2.0
-#&gt; 12 Dragon 2.0
-#&gt;                                                                                                  details
-#&gt; 1                     Capsule used to qualify Dragon 2's environmental control and life support systems.
-#&gt; 2                                                  Rumored to be used for Inflight Abort Test after DM-1
-#&gt; 3                                                              Currently in construction for use in DM-2
-#&gt; 4                                                                      First Dragon capsule to be reused
-#&gt; 5                                                                     Second Dragon capsule to be reused
-#&gt; 6                                                                                                   &lt;NA&gt;
-#&gt; 7                                                                                                   &lt;NA&gt;
-#&gt; 8                                                                                                   &lt;NA&gt;
-#&gt; 9                                                                   The last newly manufactured Dragon 1
-#&gt; 10                                                 Destroyed in a test anomaly at LZ-1 on April 20, 2019
-#&gt; 11                        In construction for use in first mission in contract under the CCtCap contract
-#&gt; 12 In Hawthorne, CA as of October 11, 2019. Seen in background during Musk/Bridenstine press conference.
-#&gt;    reuse_count
-#&gt; 1            0
-#&gt; 2            0
-#&gt; 3            0
-#&gt; 4            2
-#&gt; 5            2
-#&gt; 6            1
-#&gt; 7            1
-#&gt; 8            2
-#&gt; 9            1
-#&gt; 10           0
-#&gt; 11           0
-#&gt; 12           0</div><div class='input'>
-<span class='co'>## get details about core B1041</span>
-<span class='fu'>get_SpaceX_parts</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"cores"</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"B1041"</span>)</div><div class='output co'>#&gt; $core_serial
-#&gt; [1] "B1041"
-#&gt; 
-#&gt; $block
-#&gt; [1] 4
-#&gt; 
-#&gt; $status
-#&gt; [1] "lost"
-#&gt; 
-#&gt; $original_launch
-#&gt; [1] "2017-10-09T12:37:00.000Z"
-#&gt; 
-#&gt; $original_launch_unix
-#&gt; [1] 1507552620
-#&gt; 
-#&gt; $missions
-#&gt;                     name flight
-#&gt; 1 Iridium NEXT Mission 3     48
-#&gt; 2 Iridium NEXT Mission 5     58
-#&gt; 
-#&gt; $reuse_count
-#&gt; [1] 1
-#&gt; 
-#&gt; $rtls_attempts
-#&gt; [1] 0
-#&gt; 
-#&gt; $rtls_landings
-#&gt; [1] 0
-#&gt; 
-#&gt; $asds_attempts
-#&gt; [1] 1
-#&gt; 
-#&gt; $asds_landings
-#&gt; [1] 1
-#&gt; 
-#&gt; $water_landing
-#&gt; [1] FALSE
-#&gt; 
-#&gt; $details
-#&gt; [1] "Stage Expended"
-#&gt; </div><div class='input'>
+<span class='co'># get core by serial number</span>
+<span class='fu'>get_SpaceX_cores</span>(<span class='kw'>core_serial</span> <span class='kw'>=</span> <span class='st'>"B1037"</span>)</div><div class='output co'>#&gt;   core_serial block status          original_launch original_launch_unix
+#&gt; 1       B1037     3   lost 2017-07-05T23:35:00.000Z           1499297700
+#&gt;           missions reuse_count rtls_attempts rtls_landings asds_attempts
+#&gt; 1 Intelsat 35e, 44           0             0             0             0
+#&gt;   asds_landings water_landing        details
+#&gt; 1             0         FALSE Stage Expended</div><div class='input'>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

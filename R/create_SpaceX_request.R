@@ -18,7 +18,7 @@ create_SpaceX_request <- function(
 
   host <- "https://api.spacexdata.com"
 
-  url <- httr::modify_url(host, path = c("v2", path))
+  url <- httr::modify_url(host, path = c("v3", path))
 
   res <- httr::GET(url, query = query)
 

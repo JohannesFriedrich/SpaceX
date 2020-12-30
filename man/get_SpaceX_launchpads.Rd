@@ -4,11 +4,10 @@
 \alias{get_SpaceX_launchpads}
 \title{GET info about SpaceX launchpads}
 \usage{
-get_SpaceX_launchpads(name = NULL)
+get_SpaceX_launchpads(...)
 }
 \arguments{
-\item{name}{\link{character}: Name of lauchnpads. Choose "ksc_lc_39a" or NULL.
-By default all three rocket data are returned.}
+\item{...}{: Query string to API. See more in details.}
 }
 \value{
 \link{data.frame} with parsed data from SpaceX API.
@@ -22,6 +21,6 @@ GET info about SpaceX launchpads
 get_SpaceX_launchpads()
 
 ## get details about launchpad "ksc_lc_39a"
-get_SpaceX_launchpads("ksc_lc_39a")
+get_SpaceX_launchpads(site_id = "ksc_lc_39a")
 
 }

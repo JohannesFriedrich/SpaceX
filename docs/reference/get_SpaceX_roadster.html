@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GET info about SpaceX company — get_SpaceX_info • EcoCounteR</title>
+<title>GET info about gives orbital parameters about the current position of Elon's Tesla Roadster
+that was launched on the first Falcon Heavy demo flight. — get_SpaceX_roadster • EcoCounteR</title>
 
 
 <!-- jquery -->
@@ -39,8 +40,10 @@
 
 
 
-<meta property="og:title" content="GET info about SpaceX company — get_SpaceX_info" />
-<meta property="og:description" content="GET info about SpaceX company" />
+<meta property="og:title" content="GET info about gives orbital parameters about the current position of Elon's Tesla Roadster
+that was launched on the first Falcon Heavy demo flight. — get_SpaceX_roadster" />
+<meta property="og:description" content="GET info about gives orbital parameters about the current position of Elon's Tesla Roadster
+that was launched on the first Falcon Heavy demo flight." />
 
 
 
@@ -137,33 +140,116 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>GET info about SpaceX company</h1>
-    <small class="dont-index">Source: <a href='https://github.com/JohannesFriedrich/SpaceX/blob/master/R/get_SpaceX_info.R'><code>R/get_SpaceX_info.R</code></a></small>
-    <div class="hidden name"><code>get_SpaceX_info.Rd</code></div>
+    <h1>GET info about gives orbital parameters about the current position of Elon's Tesla Roadster
+that was launched on the first Falcon Heavy demo flight.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/JohannesFriedrich/SpaceX/blob/master/R/get_SpcaeX_roadster.R'><code>R/get_SpcaeX_roadster.R</code></a></small>
+    <div class="hidden name"><code>get_SpaceX_roadster.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>GET info about SpaceX company</p>
+    <p>GET info about gives orbital parameters about the current position of Elon's Tesla Roadster
+that was launched on the first Falcon Heavy demo flight.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_SpaceX_info</span>()</pre>
+    <pre class="usage"><span class='fu'>get_SpaceX_roadster</span>(<span class='no'>...</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>...</th>
+      <td><p>: Query string to API. See more in details.</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with parsed data from SpaceX API.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>get_SpaceX_info</span>()</div><div class='output co'>#&gt;     name   founder founded employees vehicles launch_sites test_sites       ceo
-#&gt; 1 SpaceX Elon Musk    2002      7000        3            3          1 Elon Musk
-#&gt;         cto             coo cto_propulsion valuation headquarters.address
-#&gt; 1 Elon Musk Gwynne Shotwell    Tom Mueller  2.75e+10          Rocket Road
-#&gt;   headquarters.city headquarters.state           links.website
-#&gt; 1         Hawthorne         California https://www.spacex.com/
-#&gt;                            links.flickr              links.twitter
-#&gt; 1 https://www.flickr.com/photos/spacex/ https://twitter.com/SpaceX
-#&gt;             links.elon_twitter
-#&gt; 1 https://twitter.com/elonmusk
-#&gt;                                                                                                                                                                                                             summary
-#&gt; 1 SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.</div><div class='input'>
+<span class='co'>## get details about the Tesla roadster position</span>
+<span class='fu'>get_SpaceX_roadster</span>()</div><div class='output co'>#&gt; $name
+#&gt; [1] "Elon Musk's Tesla Roadster"
+#&gt; 
+#&gt; $launch_date_utc
+#&gt; [1] "2018-02-06T20:45:00.000Z"
+#&gt; 
+#&gt; $launch_date_unix
+#&gt; [1] 1517949900
+#&gt; 
+#&gt; $launch_mass_kg
+#&gt; [1] 1350
+#&gt; 
+#&gt; $launch_mass_lbs
+#&gt; [1] 2976
+#&gt; 
+#&gt; $norad_id
+#&gt; [1] 43205
+#&gt; 
+#&gt; $epoch_jd
+#&gt; [1] 2459005
+#&gt; 
+#&gt; $orbit_type
+#&gt; [1] "heliocentric"
+#&gt; 
+#&gt; $apoapsis_au
+#&gt; [1] 1.663951
+#&gt; 
+#&gt; $periapsis_au
+#&gt; [1] 0.9859809
+#&gt; 
+#&gt; $semi_major_axis_au
+#&gt; [1] 190.5456
+#&gt; 
+#&gt; $eccentricity
+#&gt; [1] 0.2558443
+#&gt; 
+#&gt; $inclination
+#&gt; [1] 1.077498
+#&gt; 
+#&gt; $longitude
+#&gt; [1] 317.084
+#&gt; 
+#&gt; $periapsis_arg
+#&gt; [1] 177.5233
+#&gt; 
+#&gt; $period_days
+#&gt; [1] 557.0644
+#&gt; 
+#&gt; $speed_kph
+#&gt; [1] 71917.13
+#&gt; 
+#&gt; $speed_mph
+#&gt; [1] 44687.22
+#&gt; 
+#&gt; $earth_distance_km
+#&gt; [1] 234079045
+#&gt; 
+#&gt; $earth_distance_mi
+#&gt; [1] 145449930
+#&gt; 
+#&gt; $mars_distance_km
+#&gt; [1] 96381008
+#&gt; 
+#&gt; $mars_distance_mi
+#&gt; [1] 59888363
+#&gt; 
+#&gt; $flickr_images
+#&gt; [1] "https://farm5.staticflickr.com/4615/40143096241_11128929df_b.jpg"
+#&gt; [2] "https://farm5.staticflickr.com/4702/40110298232_91b32d0cc0_b.jpg"
+#&gt; [3] "https://farm5.staticflickr.com/4676/40110297852_5e794b3258_b.jpg"
+#&gt; [4] "https://farm5.staticflickr.com/4745/40110304192_6e3e9a7a1b_b.jpg"
+#&gt; 
+#&gt; $wikipedia
+#&gt; [1] "https://en.wikipedia.org/wiki/Elon_Musk%27s_Tesla_Roadster"
+#&gt; 
+#&gt; $video
+#&gt; [1] "https://youtu.be/wbSwFU6tY1c"
+#&gt; 
+#&gt; $details
+#&gt; [1] "Elon Musk's Tesla Roadster is an electric sports car that served as the dummy payload for the February 2018 Falcon Heavy test flight and is now an artificial satellite of the Sun. Starman, a mannequin dressed in a spacesuit, occupies the driver's seat. The car and rocket are products of Tesla and SpaceX. This 2008-model Roadster was previously used by Musk for commuting, and is the only consumer car sent into space."
+#&gt; </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -1,9 +1,8 @@
 #' GET info about SpaceX launchpads
 #'
-#' @param name [character]: Name of lauchnpads. Choose "ksc_lc_39a" or NULL.
-#' By default all three rocket data are returned.
-#'
 #' @return [data.frame] with parsed data from SpaceX API.
+#'
+#' @param ... : Query string to API. See more in details.
 #'
 #' @examples
 #'
@@ -11,13 +10,18 @@
 #' get_SpaceX_launchpads()
 #'
 #' ## get details about launchpad "ksc_lc_39a"
-#' get_SpaceX_launchpads("ksc_lc_39a")
+#' get_SpaceX_launchpads(site_id = "ksc_lc_39a")
 #'
 #' @md
 #' @export
-get_SpaceX_launchpads <- function(name = NULL) {
+get_SpaceX_launchpads <- function(
+  ...) {
 
-  data <- create_SpaceX_request(path = c("launchpads", name))
+  query <- list(...)
+
+  if (length(query) == 0) query <- NULL
+
+  data <- create_SpaceX_request(path = c("launchpads"), query = query)
 
   return(data)
 
