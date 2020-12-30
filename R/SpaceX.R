@@ -3,7 +3,7 @@
 #' An R API wrapper for the SpaceX API.
 #'
 #' \tabular{ll}{Package: \tab SpaceX\cr Type: \tab Package\cr Version:
-#' \tab 0.0.1 \cr Date: \tab 2018-XX-XX \cr License: \tab GPL-3\cr }
+#' \tab 0.0.1 \cr Date: \tab 2020-XX-XX \cr License: \tab GPL-2\cr }
 #'
 #' @name SpaceX-package
 #'
